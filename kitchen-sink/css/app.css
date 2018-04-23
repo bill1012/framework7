@@ -1025,9 +1025,31 @@ code {
 .badge-new{
   color:#ff0000;
   background-color:inherit!important;
-  font-size:20px!important;
+  font-size:16px!important;
   vertical-align:super!important;
 }
+.badge-round-red{
+  border-radius: 50%!important;
+  font-size:14px!important;
+  border:1px solid #f44336;
+  background-color: #ffffff;
+  color:#f44336;
+  margin-right:10px;
+}
+
+.badge-round-green{
+  border-radius: 50%!important;
+  font-size:14px!important;
+  border:1px solid #4caf50;
+  background-color: #ffffff;
+  color:#4caf50;
+  margin-right:10px;
+}
+.data-list .item-link .item-inner{
+  background-image: none!important;
+  padding-right:0!important;
+}
+
 
 
 /*.................事件报告end..........*/

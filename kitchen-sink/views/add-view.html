@@ -1,0 +1,110 @@
+<!--suppress ALL -->
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">事件浏览</div>
+
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="data-table">
+        <table>
+          <tbody>
+          <tr>
+            <td class="label-cell">事件标题</td>
+            <td class="value-cell" colspan="3">
+              社区北墙有人破坏
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell">事件类型</td>
+            <td class="value-cell" colspan="3">
+              城管事件=>乱丟垃圾
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell" rowspan="2">事发地点</td>
+            <td class="value-cell list" colspan="3">
+              海淀区》西三旗街道
+            </td>
+          </tr>
+          <tr>
+            <td class="value-cell" colspan="3">
+              知春路中海实业大厦11层
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="value-cell textarea-cell">
+              这里填写事件概况这里填这里填写事件概况这里填这里填写事件概况这里填这里填写事件概况这里填写事件概况这里填写事件概况这里填写事件概况这里填写事件概况
+            </td>
+          </tr>
+          <tr>
+            <td class="label-50" colspan="2">
+              雷锋同志
+            </td>
+            <td class="label-50 border-left" colspan="2">
+              签发人
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="value-cell td-img">
+               <img class="button-img-add" @click="openPopup" src="./img/beach.jpg"/>
+              <img class="button-img-add" @click="openPopup" src="./img/monkey.jpg"/>
+              <img class="button-img-add" @click="openPopup" src="./img/mountains.jpg"/>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</template>
+<script>
+  return {
+    data: function () {
+      return {
+        photos: [
+          {
+            url: 'img/beach.jpg',
+            caption: 'Amazing beach in Goa, India'
+          },
+          {
+            url: 'img/monkey.jpg',
+            caption: 'I met this monkey in Chinese mountains'
+          },
+          {
+            url: 'img/mountains.jpg',
+            caption: 'Beautiful mountains in Zhangjiajie, China'
+          }
+        ],
+      }
+    },
+    methods:{
+      openPopup: function () {
+        const self = this;
+        self.popup.open();
+      }
+    },
+    on:{
+      pageInit:function () {
+        const self=this;
+        self.popup = self.$app.photoBrowser.create({
+          photos: self.photos,
+          type: 'popup',
+        });
+      },
+      pageBeforeRemove:function () {
+        const self=this;
+        self.popup.destroy();
+      }
+    }
+  }
+</script>

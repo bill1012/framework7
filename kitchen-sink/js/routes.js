@@ -513,6 +513,14 @@ var routes = [
     path: '/event/add/',
     componentUrl: './views/add.html',
   },
+  {
+    path: '/event/add-view/',
+    componentUrl: './views/add-view.html',
+  },
+  {
+    path: '/event/add-view-leader/',
+    componentUrl: './views/add-view-leader.html',
+  },
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',

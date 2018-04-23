@@ -43,13 +43,9 @@
           </tr>
           <tr>
             <td class="value-cell" colspan="3">
-              <div class="item-content item-input">
-                  <div class="item-input-wrap">
-                    <input type="text" class="input-cell-content" placeholder="请填写详细地址">
-                </div>
-              </div>
-              <!--<input class="input-cell-content" name="address" type="text"
-                                                      placeholder="请填写详细地址"/></td>-->
+
+              <input class="input-cell-content" name="address" type="text"
+                     placeholder="请填写详细地址"/></td>
           </tr>
           <tr>
             <td class="label-cell">事件概况</td>
@@ -72,9 +68,9 @@
           </tr>
           <tr>
             <td colspan="4" class="value-cell td-img">
-               <button class="button button-outline button-img-add" @click="showAllBtn">
-                 <i class="material-icons">add</i>
-               </button>
+              <button class="button button-outline button-img-add" @click="showAllBtn">
+                <i class="material-icons">add</i>
+              </button>
             </td>
           </tr>
           </tbody>
@@ -146,82 +142,17 @@
         </div>
       </div>
     </div>
-    <div class="popup address-popup">
-      <div class="page">
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="left"><a href="#" class="link popup-close"><i class="material-icons">cancel</i> </a></div>
-            <div class="title">事发地点</div>
-            <div class="right">
-              <a href="#" class="link icon-only" @click="selectEvent">
-                <i class="material-icons">check</i>
-              </a></div>
-          </div>
-        </div>
-        <div class="page-content">
-          <div class="list" style="margin:0">
-            <ul>
-              <li>
-                <label class="item-radio item-content">
-                  <input type="radio" name="event-radio" value="城管事件=>乱丟垃圾" checked="checked"/>
-                  <i class="icon icon-radio"></i>
-                  <div class="item-inner">
-                    <div class="item-title">城管事件=>乱丟垃圾</div>
-                  </div>
-                </label>
-              </li>
-              <li>
-                <label class="item-radio item-content">
-                  <input type="radio" name="event-radio" value="城管事件=>乱丟垃圾2"/>
-                  <i class="icon icon-radio"></i>
-                  <div class="item-inner">
-                    <div class="item-title">城管事件=>乱丟垃圾2</div>
-                  </div>
-                </label>
-              </li>
-              <li>
-                <label class="item-radio item-content">
-                  <input type="radio" name="event-radio" value="城管事件=>乱丟垃圾3"/>
-                  <i class="icon icon-radio"></i>
-                  <div class="item-inner">
-                    <div class="item-title">城管事件=>乱丟垃圾3</div>
-                  </div>
-                </label>
-              </li>
-              <li>
-                <label class="item-radio item-content">
-                  <input type="radio" name="event-radio" value="城管事件=>乱丟垃圾4"/>
-                  <i class="icon icon-radio"></i>
-                  <div class="item-inner">
-                    <div class="item-title">城管事件=>乱丟垃圾4</div>
-                  </div>
-                </label>
-              </li>
-              <li>
-                <label class="item-radio item-content">
-                  <input type="radio" name="event-radio" value="城管事件=>乱丟垃圾5"/>
-                  <i class="icon icon-radio"></i>
-                  <div class="item-inner">
-                    <div class="item-title">城管事件=>乱丟垃圾5</div>
-                  </div>
-                </label>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </div>
 </template>
 <script>
   return {
-    methods:{
-      openEventType:function () {
+    methods: {
+      openEventType: function () {
         this.$app.popup.open(".event-popup");
       },
-      selectEvent:function () {
-        var val=this.$("[name='event-radio']:checked").val();
+      selectEvent: function () {
+        var val = this.$("[name='event-radio']:checked").val();
         $("#eventType").text(val);
         this.$app.popup.close(".event-popup");
       },
@@ -229,20 +160,20 @@
         this.actions.open();
       }
     },
-    on:{
-      pageInit:function (e,page) {
-        var self=this;
-        var app=this.$app;
+    on: {
+      pageInit: function (e, page) {
+        var self = this;
+        var app = this.$app;
         var carVendors = {
           "东城区": ['东城区1', '东城区3', '东城区2', '东城区4', '东城区5'],
           "西城区": ['西城区1', '西城区2', '西城区3', '西城区4', '西城区5'],
           "海淀区": ['东升乡', '学院路街道', '西三旗街道', '双清路街道']
         };
-        self.pickerAddress=app.picker.create({
-          inputEl:"#address",
+        self.pickerAddress = app.picker.create({
+          inputEl: "#address",
           rotateEffect: false,
           formatValue: function (values) {
-            return values[0]+" "+values[1];
+            return values[0] + " " + values[1];
           },
           renderToolbar: function () {
             return '<div class="toolbar">' +
@@ -259,9 +190,9 @@
             {
               textAlign: 'left',
               values: ('东城区,西城区,海淀区,朝阳,丰台,门头沟,石景山,房山,通州,顺义,昌平,大兴,怀柔,平谷,延庆,密云').split(','),
-              width:100,
+              width: 100,
               onChange: function (picker, country) {
-                if(picker.cols[1].replaceValues){
+                if (picker.cols[1].replaceValues) {
                   picker.cols[1].replaceValues(carVendors[country]);
                 }
               }
@@ -312,8 +243,8 @@
         ];
         self.actions = self.$app.actions.create({buttons: buttons});
       },
-      pageBeforeRemove(){
-         this.pickerAddress.destroy();
+      pageBeforeRemove() {
+        this.pickerAddress.destroy();
         this.actions.destroy();
       }
     }
