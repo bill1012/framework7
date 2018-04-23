@@ -1,0 +1,175 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">批示转办</div>
+        <div class="right">
+          <a class="link icon-only" @click="saveReport">
+            <i class="icon material-icons">check</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="data-table">
+        <table>
+          <tbody>
+          <tr>
+            <td class="label-cell">信息标题</td>
+            <td class="value-cell" colspan="3">关于社区北墙有人破坏的批示</td>
+          </tr>
+          <tr>
+            <td class="label-cell">批示领导</td>
+            <td class="value-cell" colspan="3">胡大鹏</td>
+          </tr>
+          <tr>
+            <td class="label-cell">批示时间</td>
+            <td class="value-cell" colspan="3">2018/04/22 18:56</td>
+          </tr>
+          <tr>
+            <td class="label-cell">接收单位</td>
+            <td class="value-cell link-cell" id="deptReceiver" colspan="3" @click="selectDept">
+
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="textarea-cell">
+              <div class="value-cell-event">【批示摘抄】</div>
+              <div class="value-cell-text">
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-input-wrap">
+                      <textarea class="textarea-cell-text" placeholder="批示摘抄">这是一个振奋人心的消息。河北雄安新区设立一周年之际，党中央、国务院对《河北雄安新区规划纲要》作出批复，同意实施这一规划，雄安新区迎来高标准建设开局的起步时刻。一个荷塘苇海、城绿交融、创新驱动、宜居宜业的现代化城市，在蓝图中依稀可见。</textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="textarea-cell">
+              <div class="value-cell-event">【办理要求】</div>
+              <div class="value-cell-text">
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-input-wrap">
+                      <textarea class="textarea-cell-text" placeholder="请填写办理要求"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="sheet-modal dept-sheet">
+      <div class="toolbar">
+        <div class="toolbar-inner">
+          <div class="left"></div>
+          <div class="title">接收单位</div>
+          <div class="right"><a href="#" class="link sheet-close"><i class="material-icons">cancel</i> </a></div>
+        </div>
+      </div>
+      <div class="sheet-modal-inner">
+        <div class="page-content">
+          <div class="list" style="margin:0">
+            <ul>
+              <li>
+                <label class="item-checkbox item-content">
+                  <input type="checkbox" name="dept-checkbox" value="河西应急办" checked="checked"/>
+                  <i class="icon icon-checkbox"></i>
+                  <div class="item-inner">
+                    <div class="item-title">河西应急办</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-checkbox item-content">
+                  <input type="checkbox" name="dept-checkbox" value="河东区应急办"/>
+                  <i class="icon icon-checkbox"></i>
+                  <div class="item-inner">
+                    <div class="item-title">河东区应急办</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-checkbox item-content">
+                  <input type="checkbox" name="dept-checkbox" value="公安局"/>
+                  <i class="icon icon-checkbox"></i>
+                  <div class="item-inner">
+                    <div class="item-title">公安局</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-checkbox item-content">
+                  <input type="checkbox" name="dept-checkbox" value="交通局"/>
+                  <i class="icon icon-checkbox"></i>
+                  <div class="item-inner">
+                    <div class="item-title">交通局</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-checkbox item-content">
+                  <input type="checkbox" name="dept-checkbox" value="Drinks"/>
+                  <i class="icon icon-checkbox"></i>
+                  <div class="item-inner">
+                    <div class="item-title">卫生局</div>
+                  </div>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="block row">
+            <button class="col button button-fill color-red link sheet-close">取消</button>
+            <button class="col button button-fill color-blue" @click="selectLeader">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<style>
+  .textarea-cell{
+    vertical-align: top;
+    font-size:16px!important;
+  }
+  .value-cell-text{
+    font-size:16px!important;
+  }
+</style>
+<script>
+  return {
+    methods: {
+      saveReport: function () {
+        var app = this.$app;
+        app.dialog.confirm('是否保存？', function () {
+          app.dialog.alert("保存成功");
+        });
+      },
+      selectDept:function () {
+        app.sheet.open(".dept-sheet");
+      },
+      selectLeader: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var arr = [];
+        $("[name='dept-checkbox']:checked").each(function (index, item) {
+          var itemVal = $(item).val();
+          arr.push(itemVal);
+        })
+        $("#deptReceiver").text(arr.join());
+        app.sheet.close(".dept-sheet");
+      }
+    }
+  }
+</script>

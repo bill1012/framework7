@@ -11,6 +11,7 @@ if (document.location.search.indexOf('theme=') >= 0) {
 var app = new Framework7({
   id: 'io.framework7.testapp',
   root: '#app',
+  material: true,
   theme: theme,
   data: function () {
     return {
@@ -29,4 +30,10 @@ var app = new Framework7({
   vi: {
     placementId: 'pltd4o7ibb9rc653x14',
   },
+  dialog: {
+    title: '应急助手',
+    // change default "OK" button text
+    buttonOk: '确定',
+    buttonCancel: '取消',
+  }
 });

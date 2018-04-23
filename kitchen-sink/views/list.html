@@ -1,0 +1,194 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">事件报告</div>
+        <div class="right">
+          <a class="link icon-only" href="/event/add/">
+            <i class="icon f7-icons ios-only">add</i>
+            <i class="icon material-icons md-only">add</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="toolbar toolbar-bottom-md">
+      <div class="toolbar-inner">
+        <button class="button" @click="showAllBtn">
+          <i class="material-icons icon-button">filter_list</i>
+          <span class="button-label">全部</span>
+        </button>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="list" style="margin-top:0px;">
+        <ul>
+          <li>
+            <a href="/event/view/" class="item-link item-content">
+              <div class="item-media item-content-icon" style="background-color: #66cc33;">
+                <span class="item-content-text">自然灾害</span>
+              </div>
+              <div class="item-inner item-cell">
+                <div class="item-title item-title-bg">
+                  桥梁私拉邪教条幅
+                  <div class="item-footer item-row">
+                    <div class="item-cell item-row-sm"><i class="material-icons icon-sm">add_location</i> 奎文应急办
+                    </div>
+                    <div class="item-cell item-row-sm"><i class="material-icons icon-sm">access_time</i> 2018-02-13
+                      14:30
+                    </div>
+                  </div>
+                </div>
+                <div class="item-after"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#" class="item-link item-content">
+              <div class="item-media item-content-icon" style="background-color: #ff99cc;">
+                <span class="item-content-text">社会治安</span>
+              </div>
+              <div class="item-inner item-cell">
+                <div class="item-title item-title-bg">
+                  桥梁私拉邪教条幅
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell"><i class="material-icons icon-sm">add_location</i> 奎文应急办
+                    </div>
+                    <div class="item-cell"><i class="material-icons icon-sm">access_time</i> 2018-02-13
+                      14:30
+                    </div>
+                  </div>
+                </div>
+                <div class="item-after"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#" class="item-link item-content">
+              <div class="item-media item-content-icon" style="background-color: #cc33ff;">
+                <span class="item-content-text">事故灾难</span>
+              </div>
+              <div class="item-inner item-cell">
+                <div class="item-title item-title-bg">
+                  桥梁私拉邪教条幅
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell"><i class="material-icons icon-sm">add_location</i> 奎文应急办
+                    </div>
+                    <div class="item-cell"><i class="material-icons icon-sm">access_time</i> 2018-02-13
+                      14:30
+                    </div>
+                  </div>
+                </div>
+                <div class="item-after"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#" class="item-link item-content">
+              <div class="item-media item-content-icon" style="background-color: #ff9933;">
+                <span class="item-content-text">医疗卫生</span>
+              </div>
+              <div class="item-inner item-cell">
+                <div class="item-title item-title-bg">
+                  桥梁私拉邪教条幅
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell"><i class="material-icons icon-sm">add_location</i> 奎文应急办
+                    </div>
+                    <div class="item-cell"><i class="material-icons icon-sm">access_time</i> 2018-02-13
+                      14:30
+                    </div>
+                  </div>
+                </div>
+                <div class="item-after"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/event/leader-view/" class="item-link item-content" >
+              <div class="item-media item-content-icon" style="background-color:#FF3366;">
+                <span class="item-content-text">领导批示</span>
+              </div>
+              <div class="item-inner item-cell">
+                <div class="item-title item-title-bg">
+                  关于桥梁私拉邪教条幅的批示
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell"><i class="material-icons icon-sm">add_location</i> 奎文应急办
+                    </div>
+                    <div class="item-cell"><i class="material-icons icon-sm">access_time</i> 2018-02-13
+                      14:30
+                    </div>
+                  </div>
+                </div>
+                <div class="item-after"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    methods: {
+      showAllBtn:function () {
+        this.actions.open();
+      }
+    },
+    on: {
+      pageBeforeRemove:function () {
+        this.actions.destroy();
+      },
+      pageInit: function(page){
+        var self=this;
+        var buttons = [
+          // First Group
+          [
+            /*{
+              text: '请选择类别',
+              label: true
+            },*/
+            {
+              text: '<i class="material-icons actions-button-icon">person</i>领导批示',
+              bold: true,
+              //icon: '<i class="material-icons">search</i>',
+              onClick:function () {
+                app.dialog.alert("取消了");
+              }
+            }
+          ],
+          [
+            {
+              text: '<i class="material-icons actions-button-icon">event</i>突发事件',
+              onClick:function () {
+                app.dialog.alert("点击突发事件按钮");
+              }
+            }
+          ],
+          // Second Group
+          [
+            {
+              text: '<i class="material-icons actions-button-icon">cancel</i>取 消',
+              color: 'red'
+            }
+          ]
+        ];
+        self.actions = self.$app.actions.create({buttons: buttons});
+      }
+
+    }
+  }
+</script>

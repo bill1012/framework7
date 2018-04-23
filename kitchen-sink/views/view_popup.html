@@ -1,0 +1,213 @@
+<template>
+<div class="page">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only"></span>
+        </a>
+      </div>
+      <div class="title">事件浏览</div>
+      <div class="right">
+        <a class="link icon-only" @click="showAllBtn">
+          <i class="icon f7-icons ios-only">bars</i>
+          <i class="icon material-icons md-only">dehaze</i>
+        </a>
+      </div>
+    </div>
+  </div>
+    <div class="toolbar toolbar-bottom-md">
+      <div class="toolbar-inner">
+        <button class="button button-outline popup-open" data-popup=".back-popup">
+          <i class="material-icons icon-button">arrow_back</i>
+          <span class="button-label">退回</span>
+        </button>
+        <button class="button button-outline button-border-left">
+          <i class="material-icons icon-button">arrow_upward</i>
+          <span class="button-label">呈报</span>
+        </button>
+        <button class="button button-outline button-border-left">
+          <i class="material-icons icon-button">reply</i>
+          <span class="button-label">转发</span>
+        </button>
+        <button class="button button-outline button-border-left popup-open" data-popup=".file-popup">
+          <i class="material-icons icon-button">attachment</i>
+          <span class="button-label">附件</span>
+        </button>
+      </div>
+    </div>
+  <div class="page-content">
+    <div class="data-table">
+      <table>
+        <tbody>
+        <tr>
+          <td class="label-cell">信息标题</td>
+          <td class="value-cell" colspan="3">社区北墙有人破坏</td>
+        </tr>
+        <tr>
+          <td class="label-cell">报告单位</td>
+          <td class="value-cell" colspan="3">潍城区应急办</td>
+        </tr>
+        <tr>
+          <td class="label-50" colspan="2">
+            <i class="material-icons cell-icon">person</i>
+            <span class="cell-text">值班员姓名</span>
+          </td>
+          <td class="label-50 border-left" colspan="2">
+            <i class="material-icons cell-icon">access_time</i>
+            <span class="cell-text">2018/04/21 20:30</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4" class="textarea-cell">
+            这是一个振奋人心的消息。河北雄安新区设立一周年之际，党中央、国务院对《河北雄安新区规划纲要》作出批复，
+            同意实施这一规划，雄安新区迎来高标准建设开局的起步时刻。一个荷塘苇海、城绿交融、创新驱动、宜居宜业的现代化城市，
+            在蓝图中依稀可见。
+          </td>
+        </tr>
+        <tr>
+          <td class="label-cell label-cell-sm">13:15<br/> 2018/05/15</td>
+          <td class="value-cell value-cell-flow" colspan="3">
+            <div class="value-cell-event">【事件退回】</div>
+            <div class="value-cell-text">这里写退回原因</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="label-cell label-cell-sm">13:15<br/> 2018/05/15</td>
+          <td class="value-cell value-cell-flow" colspan="3">
+            <div class="value-cell-event">【事件转发】</div>
+            <div class="value-cell-text">转发单位：河东区应急办、河西区应急办</div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="popup back-popup">
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="title">信息退回</div>
+          <div class="right"><a href="#" class="link popup-close"><i class="material-icons">cancel</i> </a></div>
+        </div>
+      </div>
+      <div class="page-content">
+        <div class="list no-hairlines-md">
+          <ul>
+           <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-input-wrap">
+                  <textarea placeholder="请填写退回原因"></textarea>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="block row">
+            <button class="col button button-fill color-red">取消</button>
+            <button class="col button button-fill color-blue">确定</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="popup file-popup">
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="title">相关附件</div>
+          <div class="right"><a href="#" class="link popup-close"><i class="material-icons">cancel</i> </a></div>
+        </div>
+      </div>
+      <div class="page-content">
+        <div class="list" style="margin-top:0px;">
+          <ul>
+            <li class="item-content">
+              <div class="item-media icon-file">
+                <i class="material-icons">insert_drive_file</i>
+              </div>
+              <div class="item-inner">
+                北京市经济开发区综合应急指挥平台操作流程.docx
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li class="item-content">
+              <div class="item-media icon-file">
+                <i class="material-icons">photo</i>
+              </div>
+              <div class="item-inner">
+                北京市经济开发区综合应急指挥平台操作流程.jpg
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li class="item-content">
+              <div class="item-media icon-file">
+                <i class="material-icons">videocam</i>
+              </div>
+              <div class="item-inner">
+                北京市经济开发区综合应急指挥平台操作流程.mvm
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</template>s
+<script>
+  return {
+    methods: {
+      openPrompt: function () {
+        var app = this.$app;
+        app.dialog.prompt('请填写信息退回原因',"信息退回", function (name) {
+            app.dialog.alert('Ok, your name is ' + name);
+        });
+      },
+      showAllBtn:function () {
+        this.actions.open();
+      }
+    },
+    on: {
+      pageBeforeRemove:function () {
+        this.actions.destroy();
+      },
+      pageInit: function(page){
+        var self=this;
+        var buttons = [
+          // First Group
+          [
+            {
+              text: '<i class="material-icons actions-button-icon">description</i>应急预案',
+              bold: true,
+              //icon: '<i class="material-icons">description</i>',
+              onClick:function () {
+                app.dialog.alert("取消了");
+              }
+            }
+          ],
+          [
+            {
+              text: '<i class="material-icons actions-button-icon">person</i>应急专家',
+              onClick:function () {
+                app.dialog.alert("点击突发事件按钮");
+              }
+            }
+          ],
+          // Second Group
+          [
+            {
+              text: '<i class="material-icons actions-button-icon">developer_board</i>典型案例'
+            }
+          ]
+        ];
+        self.actions = self.$app.actions.create({buttons: buttons});
+      }
+
+    }
+  }
+</script>

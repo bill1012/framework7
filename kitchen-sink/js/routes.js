@@ -481,6 +481,38 @@ var routes = [
     },
   },
 
+  {
+    path: '/event/index/',
+    url:'./views/index.html'
+  },
+  {
+    path: '/event/list/',
+    componentUrl: './views/list.html',
+  },
+  {
+    path: '/event/view/',
+    componentUrl: './views/view.html',
+  },
+  {
+    path: '/event/leader-view/',
+    componentUrl: './views/leader-view.html',
+  },
+  {
+    path: '/event/leader-transfer/',
+    componentUrl: './views/leader-transfer.html',
+  },
+  {
+    path: '/event/report/',
+    componentUrl: './views/report.html',
+  },
+  {
+    path: '/event/login/',
+    url: './views/login.html',
+  },
+  {
+    path: '/event/add/',
+    url: './views/add.html',
+  },
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',

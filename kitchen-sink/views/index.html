@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#2196f3">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+  <title>Framework7</title>
+  <link rel="stylesheet" href="css/framework7.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="apple-touch-icon" href="img/f7-icon-square.png">
+  <link rel="icon" href="img/f7-icon.png">
+</head>
+<body>
+<div id="app">
+  <div class="view view-main view-init ios-edges" data-url="/">
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="title sliding ios-only">首页</div>
+          <div class="title sliding md-only" style="left:40%">首页</div>
+        </div>
+      </div>
+      <div class="toolbar toolbar-bottom-md toolbar-bottom">
+        <div class="toolbar-inner">
+          <button class="button item-menu">
+            <div>
+              <i class="material-icons item-icon">dialpad</i>
+            </div>
+            <div class="item-title-bg">
+              系统设置
+            </div>
+          </button>
+          <button class="button item-menu">
+            <div>
+              <i class="material-icons item-icon">exit_to_app</i>
+            </div>
+            <div class="item-title-bg">
+              退出应用
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="page-content" style="padding-bottom: 70px;">
+        <div class="page-container">
+          <div class="list item-user">
+            <div class="item-content">
+              <div class="item-media"><img src="./img/timg.jpeg" class="img-user"/></div>
+              <div class="item-inner" style="position:static">
+                <div class="item-title">
+                  <div class="item-title-bg">欢迎，西门吹雪</div>
+                  <div class="item-subtitle">
+                    星期三，2018年4月21日
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <a class="col item-menu button button-fill color-red" href="/event/list/">
+              <div>
+                <i class="material-icons item-icon">event</i>
+              </div>
+              <div class="item-title-bg">
+                事件报告
+              </div>
+            </a>
+            <button class="col item-menu button button-fill color-green">
+              <div>
+                <i class="material-icons item-icon">assignment</i>
+              </div>
+              <div class="item-title-bg">
+                值班安排
+              </div>
+            </button>
+            <button class="col item-menu button button-fill color-blue">
+              <div>
+                <i class="material-icons item-icon">contact_phone</i>
+              </div>
+              <div class="item-title-bg">
+                通讯录
+              </div>
+            </button>
+          </div>
+          <div class="row" style="margin-top:16px;">
+            <button class="col item-menu button button-fill color-custom">
+              <div>
+                <i class="material-icons item-icon">video_call</i>
+              </div>
+              <div class="item-title-bg">
+                视频会商
+              </div>
+            </button>
+            <button class="col item-menu button button-fill color-orange">
+              <div>
+                <i class="material-icons item-icon">apps</i>
+              </div>
+              <div class="item-title-bg">
+                应急预案
+              </div>
+            </button>
+            <button class="col item-menu button button-fill color-pink" >
+              <div>
+                <i class="material-icons item-icon">search</i>
+              </div>
+              <div class="item-title-bg">
+                资源检索
+              </div>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/framework7.js"></script>
+<script src="js/routes.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

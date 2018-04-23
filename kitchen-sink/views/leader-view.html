@@ -1,0 +1,78 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">批示浏览</div>
+        <div class="right">
+          <a class="link icon-only" href="/event/view/">
+            <i class="icon f7-icons">arrow_right_fill</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="toolbar toolbar-bottom-md">
+      <div class="toolbar-inner">
+        <button class="button button-outline" @click="transferTodo">
+          <i class="material-icons icon-button">border_color</i>
+          <span class="button-label">批示转办</span>
+        </button>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="data-table">
+        <table>
+          <tbody>
+          <tr>
+            <td class="label-cell">信息标题</td>
+            <td class="value-cell" colspan="3">关于社区北墙有人破坏的批示</td>
+          </tr>
+          <tr>
+            <td class="label-cell">批示领导</td>
+            <td class="value-cell" colspan="3">胡大鹏</td>
+          </tr>
+          <tr>
+            <td class="label-cell">批示时间</td>
+            <td class="value-cell" colspan="3">2018/04/22 18:56</td>
+          </tr>
+          <tr>
+            <td colspan="4" class="textarea-cell">
+              这是一个振奋人心的消息。河北雄安新区设立一周年之际，党中央、国务院对《河北雄安新区规划纲要》作出批复，
+              同意实施这一规划，雄安新区迎来高标准建设开局的起步时刻。一个荷塘苇海、城绿交融、创新驱动、宜居宜业的现代化城市，
+              在蓝图中依稀可见。
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell label-cell-sm">13:15<br/> 2018/05/15</td>
+            <td class="value-cell value-cell-flow" colspan="3">
+              <div class="value-cell-event">【已转单位】</div>
+              <div class="value-cell-text">
+                河东区已经办（<span class="text-red">未签收</span>）河西区已经办（<span class="text-green">已签收</span>）
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
+<style>
+  .value-cell{
+    width: 75%!important;
+  }
+</style>
+<script>
+  return {
+    methods: {
+      transferTodo: function () {
+        this.$router.navigate("/event/leader-transfer/")
+      }
+    }
+  }
+</script>
