@@ -17,27 +17,28 @@
         </div>
       </div>
     </div>
-    <div class="toolbar toolbar-bottom-md">
+
+    <div class="toolbar toolbar-bottom-md toolbar-bottom">
       <div class="toolbar-inner">
-        <button class="button button-outline sheet-open" data-sheet=".back-sheet">
-          <i class="material-icons icon-button">arrow_back</i>
-          <span class="button-label">退回</span>
+        <button class="button button-outline sheet-open item-menu" data-sheet=".back-sheet">
+          <i class="icon material-icons icon-button">arrow_back</i>
+          <span class="button-label-bg">退回</span>
         </button>
-        <button class="button button-outline button-border-left" @click="openReport">
-          <i class="material-icons icon-button">arrow_upward</i>
-          <span class="button-label">呈报</span>
+        <button class="button button-outline button-border-left item-menu" @click="openReport">
+          <i class="icon material-icons icon-button">arrow_upward</i>
+          <span class="button-label-bg">呈报</span>
         </button>
-        <button class="button button-outline button-border-left sheet-open" data-sheet=".forward-sheet">
-          <i class="material-icons icon-button">reply</i>
-          <span class="button-label">转发</span>
+        <button class="button button-outline button-border-left popup-open item-menu" data-popup=".forward-popup">
+          <i class="icon material-icons icon-button">reply</i>
+          <span class="button-label-bg">转发</span>
         </button>
-        <button class="button button-outline button-border-left sheet-open" data-sheet=".file-sheet">
-          <i class="material-icons icon-button">attachment</i>
-          <span class="button-label">附件</span>
+        <button class="button button-outline button-border-left sheet-open item-menu" data-sheet=".file-sheet">
+          <i class="icon material-icons icon-button">attachment</i>
+          <span class="button-label-bg">附件</span>
         </button>
       </div>
     </div>
-    <div class="page-content">
+    <div class="page-content with-tabbar-bg">
       <div class="data-table">
         <table>
           <tbody>
@@ -159,15 +160,17 @@
         </div>
       </div>
     </div>
-    <div class="sheet-modal forward-sheet">
-      <div class="toolbar">
-        <div class="toolbar-inner">
-          <div class="left"></div>
-          <div class="title">事件转发</div>
-          <div class="right"><a href="#" class="link sheet-close"><i class="material-icons">cancel</i> </a></div>
+    <div class="popup forward-popup">
+      <div class="page">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"><a href="#" class="link popup-close"><i class="material-icons">cancel</i> </a></div>
+            <div class="title">事件转发</div>
+            <div class="right"><a href="#" class="link icon-only">
+              <i class="material-icons">check</i>
+            </a></div>
+          </div>
         </div>
-      </div>
-      <div class="sheet-modal-inner">
         <div class="page-content">
           <div class="list" style="margin:0">
             <ul>
@@ -218,19 +221,15 @@
               </li>
             </ul>
           </div>
-          <div class="block row">
-            <button class="col button button-fill color-red">取消</button>
-            <button class="col button button-fill color-blue">确定</button>
-          </div>
         </div>
       </div>
     </div>
   </div>
-</template>s
+</template>
 <script>
   return {
     methods: {
-      openReport:function () {
+      openReport: function () {
         this.$router.navigate("/event/report/");
       },
       openPrompt: function () {
