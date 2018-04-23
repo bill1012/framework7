@@ -35,13 +35,13 @@
           <tr>
             <td class="label-cell">接收单位</td>
             <td class="value-cell link-cell" id="deptReceiver" colspan="3" @click="selectDept">
-
+              河西应急办
             </td>
           </tr>
           <tr>
-            <td colspan="4" class="textarea-cell">
+            <td colspan="4" class="textarea-cell textarea-cell-top">
               <div class="value-cell-event">【批示摘抄】</div>
-              <div class="value-cell-text">
+              <div class="value-cell-text value-cell-text-bg">
                 <div class="item-content item-input">
                   <div class="item-inner">
                     <div class="item-input-wrap">
@@ -53,9 +53,9 @@
             </td>
           </tr>
           <tr>
-            <td colspan="4" class="textarea-cell">
+            <td colspan="4" class="textarea-cell textarea-cell-top">
               <div class="value-cell-event">【办理要求】</div>
-              <div class="value-cell-text">
+              <div class="value-cell-text value-cell-text-bg">
                 <div class="item-content item-input">
                   <div class="item-inner">
                     <div class="item-input-wrap">
@@ -70,24 +70,27 @@
         </table>
       </div>
     </div>
-    <div class="sheet-modal dept-sheet">
-      <div class="toolbar">
-        <div class="toolbar-inner">
-          <div class="left"></div>
-          <div class="title">接收单位</div>
-          <div class="right"><a href="#" class="link sheet-close"><i class="material-icons">cancel</i> </a></div>
+    <div class="popup dept-popup">
+      <div class="page">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"><a href="#" class="link popup-close"><i class="material-icons">cancel</i> </a></div>
+            <div class="title">接收单位</div>
+            <div class="right">
+              <a href="#" class="link icon-only" @click="selectLeader">
+                <i class="material-icons">check</i>
+              </a></div>
+          </div>
         </div>
-      </div>
-      <div class="sheet-modal-inner">
         <div class="page-content">
           <div class="list" style="margin:0">
             <ul>
               <li>
                 <label class="item-checkbox item-content">
-                  <input type="checkbox" name="dept-checkbox" value="河西应急办" checked="checked"/>
+                  <input type="checkbox" name="dept-checkbox" value="河西区应急办" checked="checked"/>
                   <i class="icon icon-checkbox"></i>
                   <div class="item-inner">
-                    <div class="item-title">河西应急办</div>
+                    <div class="item-title">河西区应急办</div>
                   </div>
                 </label>
               </li>
@@ -120,7 +123,7 @@
               </li>
               <li>
                 <label class="item-checkbox item-content">
-                  <input type="checkbox" name="dept-checkbox" value="Drinks"/>
+                  <input type="checkbox" name="dept-checkbox" value="卫生局"/>
                   <i class="icon icon-checkbox"></i>
                   <div class="item-inner">
                     <div class="item-title">卫生局</div>
@@ -129,22 +132,26 @@
               </li>
             </ul>
           </div>
-          <div class="block row">
-            <button class="col button button-fill color-red link sheet-close">取消</button>
-            <button class="col button button-fill color-blue" @click="selectLeader">确定</button>
-          </div>
         </div>
       </div>
     </div>
+
+
   </div>
 </template>
 <style>
-  .textarea-cell{
-    vertical-align: top;
-    font-size:16px!important;
+  .value-cell{
+    width: 75%!important;
   }
-  .value-cell-text{
-    font-size:16px!important;
+</style>
+<style>
+  .textarea-cell-top {
+    vertical-align: top;
+    font-size: 16px !important;
+  }
+
+  .value-cell-text-bg {
+    font-size: 16px !important;
   }
 </style>
 <script>
@@ -156,8 +163,8 @@
           app.dialog.alert("保存成功");
         });
       },
-      selectDept:function () {
-        app.sheet.open(".dept-sheet");
+      selectDept: function () {
+        app.popup.open(".dept-popup");
       },
       selectLeader: function () {
         var $ = this.$;
@@ -168,7 +175,7 @@
           arr.push(itemVal);
         })
         $("#deptReceiver").text(arr.join());
-        app.sheet.close(".dept-sheet");
+        app.popup.close(".dept-popup");
       }
     }
   }
