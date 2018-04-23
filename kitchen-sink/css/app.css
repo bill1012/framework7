@@ -887,3 +887,16 @@ code {
   text-align: center;
   color: #2196f3 !important;
 }
+
+.td-img{
+  padding:10px!important;
+}
+.button-img-add{
+  width:4em;
+  height:4em!important;
+}
+
+.button-img-add i{
+  vertical-align: middle;
+  font-size:32px;
+}

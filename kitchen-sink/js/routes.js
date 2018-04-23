@@ -511,7 +511,7 @@ var routes = [
   },
   {
     path: '/event/add/',
-    url: './views/add.html',
+    componentUrl: './views/add.html',
   },
   // Default route (404 page). MUST BE THE LAST
   {
