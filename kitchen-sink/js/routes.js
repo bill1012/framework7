@@ -534,6 +534,21 @@ var routes = [
     path: '/contact/view/',
     componentUrl:'./views/contact/view.html',
   },
+
+  {
+    path: '/event/leader/leader-view/',
+    componentUrl: './views/event/leader/leader-view.html',
+  },
+
+  {
+    path: '/event/leader/leader-transfer/',
+    componentUrl: './views/event/leader/leader-transfer.html',
+  },
+
+  {
+    path: '/event/leader/leader-relative/',
+    componentUrl: './views/event/leader/leader-relative.html',
+  },
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',
