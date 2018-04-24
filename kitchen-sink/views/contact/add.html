@@ -1,0 +1,272 @@
+<!--suppress ALL -->
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">新增联系人</div>
+        <div class="right">
+          <a class="link icon-only" @click="saveContact">
+            <i class="icon f7-icons ios-only">check</i>
+            <i class="icon material-icons md-only">check</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="list inline-labels no-hairlines-md">
+        <ul>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">人员姓名</div>
+              <div class="item-input-wrap">
+                <input type="text" placeholder="请填写姓名">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">工作单位</div>
+              <div class="item-input-wrap input-dropdown-wrap">
+                <input type="text" id="dept" placeholder="请选择工作单位" value="河东应急办" readonly="readonly" @click="openDeptPopup">
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">日常职务</div>
+              <div class="item-input-wrap">
+                <input type="text" placeholder="日常职务">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">办公电话</div>
+              <div class="item-input-wrap">
+                <input type="tel" placeholder="办公电话">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">常用手机</div>
+              <div class="item-input-wrap">
+                <input type="tel" placeholder="常用手机">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">备用手机</div>
+              <div class="item-input-wrap">
+                <input type="tel" placeholder="备用手机">
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">性别</div>
+              <div class="item-input-wrap input-dropdown-wrap">
+                <select placeholder="Please choose...">
+                  <option value="Male">男</option>
+                  <option value="Female">女</option>
+                </select>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">所属群组</div>
+              <div class="item-input-wrap input-dropdown-wrap" >
+                <input type="text"  placeholder="请选择群组" id="group" readonly="readonly" @click="openGroupPopup">
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">备注</div>
+              <div class="item-input-wrap">
+                <input type="text" placeholder="备注"></input>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="popup group-popup">
+      <div class="page">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"><a href="#" class="link popup-close"><i class="material-icons">cancel</i> </a></div>
+            <div class="title">所属群组</div>
+            <div class="right">
+              <a href="#" class="link icon-only" @click="setGroup">
+                <i class="material-icons">check</i>
+              </a></div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="list" style="margin:0">
+            <ul>
+              <li>
+                <label class="item-radio item-content">
+                  <input type="radio" name="group-radio" value="群组" checked="checked"/>
+                  <i class="icon icon-radio"></i>
+                  <div class="item-inner">
+                    <div class="item-title">群组</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-radio item-content">
+                  <input type="radio" name="group-radio" value="群组2"/>
+                  <i class="icon icon-radio"></i>
+                  <div class="item-inner">
+                    <div class="item-title">群组2</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-radio item-content">
+                  <input type="radio" name="group-radio" value="群组3"/>
+                  <i class="icon icon-radio"></i>
+                  <div class="item-inner">
+                    <div class="item-title">群组3</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-radio item-content">
+                  <input type="radio" name="group-radio" value="群组4"/>
+                  <i class="icon icon-radio"></i>
+                  <div class="item-inner">
+                    <div class="item-title">群组4</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-radio item-content">
+                  <input type="radio" name="group-radio" value="群组5"/>
+                  <i class="icon icon-radio"></i>
+                  <div class="item-inner">
+                    <div class="item-title">群组5</div>
+                  </div>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup dept-popup">
+      <div class="page">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"><a href="#" class="link popup-close"><i class="material-icons">cancel</i> </a></div>
+            <div class="title">工作单位</div>
+            <div class="right">
+              <a href="#" class="link icon-only" @click="setDept">
+                <i class="material-icons">check</i>
+              </a></div>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="list" style="margin:0">
+            <ul>
+              <li>
+                <label class="item-radio item-content">
+                  <input type="radio" name="dept-radio" value="河东应急办" checked="checked"/>
+                  <i class="icon icon-radio"></i>
+                  <div class="item-inner">
+                    <div class="item-title">河东应急办</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-radio item-content">
+                  <input type="radio" name="dept-radio" value="工作单位2"/>
+                  <i class="icon icon-radio"></i>
+                  <div class="item-inner">
+                    <div class="item-title">工作单位2</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-radio item-content">
+                  <input type="radio" name="dept-radio" value="工作单位3"/>
+                  <i class="icon icon-radio"></i>
+                  <div class="item-inner">
+                    <div class="item-title">工作单位3</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-radio item-content">
+                  <input type="radio" name="dept-radio" value="工作单位4"/>
+                  <i class="icon icon-radio"></i>
+                  <div class="item-inner">
+                    <div class="item-title">工作单位4</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label class="item-radio item-content">
+                  <input type="radio" name="dept-radio" value="工作单位5"/>
+                  <i class="icon icon-radio"></i>
+                  <div class="item-inner">
+                    <div class="item-title">工作单位5</div>
+                  </div>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</template>
+<script>
+  return {
+    methods: {
+      openGroupPopup: function () {
+        this.$app.popup.open(".group-popup");
+      },
+      setGroup: function () {
+        var val = this.$("[name='group-radio']:checked").val();
+        $("#group").val(val);
+        this.$app.popup.close(".group-popup");
+      },
+      openDeptPopup: function () {
+        this.$app.popup.open(".dept-popup");
+      },
+      setDept: function () {
+        var val = this.$("[name='dept-radio']:checked").val();
+        $("#dept").val(val);
+        this.$app.popup.close(".dept-popup");
+      },
+      saveContact:function () {
+        this.$app.dialog.alert("保存成功");
+      }
+    },
+    on: {
+      pageInit: function (e, page) {
+
+      },
+      pageBeforeRemove() {
+
+      }
+    }
+  }
+</script>

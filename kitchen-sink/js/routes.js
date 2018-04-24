@@ -481,12 +481,12 @@ var routes = [
     },
   },
   {
-    path: '/event/login/',
+    path: '/login/',
     url: './views/login.html',
   },
   {
     path: '/index/',
-    url:'./views/index.html'
+    url: './views/index.html'
   },
   {
     path: '/event/list/',
@@ -523,8 +523,16 @@ var routes = [
   },
 
   {
-    path: '/event/contact/',
-    url: './views/contact.html',
+    path: '/contact/home/',
+    url: './views/contact/home.html',
+  },
+  {
+    path: '/contact/add/',
+    componentUrl:'./views/contact/add.html',
+  },
+  {
+    path: '/contact/view/',
+    componentUrl:'./views/contact/view.html',
   },
   // Default route (404 page). MUST BE THE LAST
   {

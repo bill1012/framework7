@@ -31,13 +31,13 @@
           </tr>
           <tr>
             <td class="label-cell">事件类型</td>
-            <td class="value-cell link-cell" id="eventType" colspan="3" @click="openEventType">
-              城管事件=>乱丟垃圾
+            <td class="value-cell link-cell"  colspan="3">
+              <input type="text" placeholder="选择事发地点" readonly="readonly" id="eventType"/>
             </td>
           </tr>
           <tr>
             <td class="label-cell" rowspan="2">事发地点</td>
-            <td class="value-cell list" colspan="3">
+            <td class="value-cell link-cell" colspan="3">
               <input type="text" placeholder="选择事发地点" readonly="readonly" id="address"/>
             </td>
           </tr>
@@ -77,85 +77,21 @@
         </table>
       </div>
     </div>
-    <div class="popup event-popup">
-      <div class="page">
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="left"><a href="#" class="link popup-close"><i class="material-icons">cancel</i> </a></div>
-            <div class="title">事件类型</div>
-            <div class="right">
-              <a href="#" class="link icon-only" @click="selectEvent">
-                <i class="material-icons">check</i>
-              </a></div>
-          </div>
-        </div>
-        <div class="page-content">
-          <div class="list" style="margin:0">
-            <ul>
-              <li>
-                <label class="item-radio item-content">
-                  <input type="radio" name="event-radio" value="城管事件=>乱丟垃圾" checked="checked"/>
-                  <i class="icon icon-radio"></i>
-                  <div class="item-inner">
-                    <div class="item-title">城管事件=>乱丟垃圾</div>
-                  </div>
-                </label>
-              </li>
-              <li>
-                <label class="item-radio item-content">
-                  <input type="radio" name="event-radio" value="城管事件=>乱丟垃圾2"/>
-                  <i class="icon icon-radio"></i>
-                  <div class="item-inner">
-                    <div class="item-title">城管事件=>乱丟垃圾2</div>
-                  </div>
-                </label>
-              </li>
-              <li>
-                <label class="item-radio item-content">
-                  <input type="radio" name="event-radio" value="城管事件=>乱丟垃圾3"/>
-                  <i class="icon icon-radio"></i>
-                  <div class="item-inner">
-                    <div class="item-title">城管事件=>乱丟垃圾3</div>
-                  </div>
-                </label>
-              </li>
-              <li>
-                <label class="item-radio item-content">
-                  <input type="radio" name="event-radio" value="城管事件=>乱丟垃圾4"/>
-                  <i class="icon icon-radio"></i>
-                  <div class="item-inner">
-                    <div class="item-title">城管事件=>乱丟垃圾4</div>
-                  </div>
-                </label>
-              </li>
-              <li>
-                <label class="item-radio item-content">
-                  <input type="radio" name="event-radio" value="城管事件=>乱丟垃圾5"/>
-                  <i class="icon icon-radio"></i>
-                  <div class="item-inner">
-                    <div class="item-title">城管事件=>乱丟垃圾5</div>
-                  </div>
-                </label>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
   </div>
 </template>
 <script>
   return {
     methods: {
-      openEventType: function () {
+      /*openEventType: function () {
         this.$app.popup.open(".event-popup");
       },
       selectEvent: function () {
         var val = this.$("[name='event-radio']:checked").val();
         $("#eventType").text(val);
         this.$app.popup.close(".event-popup");
-      },
+      },*/
       showAllBtn: function () {
         this.actions.open();
       }
@@ -199,6 +135,45 @@
             },
             {
               values: carVendors["东城区"],
+              width: 160,
+            }
+          ]
+        });
+        var eventVendors = {
+          "城管事件": ['东城区1', '东城区3', '东城区2', '东城区4', '东城区5'],
+          "城管事件1": ['西城区1', '西城区2', '西城区3', '西城区4', '西城区5'],
+          "城管事件2": ['东升乡', '学院路街道', '西三旗街道', '双清路街道']
+        };
+        self.pickerEvent = app.picker.create({
+          inputEl: "#eventType",
+          rotateEffect: false,
+          formatValue: function (values) {
+            return values[0] + " " + values[1];
+          },
+          renderToolbar: function () {
+            return '<div class="toolbar">' +
+              '<div class="toolbar-inner">' +
+              '<div class="left"></div>' +
+              '<div class="title">选择事件类型</div> ' +
+              '<div class="right">' +
+              '<a href="#" class="link sheet-close popover-close"><i class="material-icons">check</i> </a>' +
+              '</div>' +
+              '</div>' +
+              '</div>';
+          },
+          cols: [
+            {
+              textAlign: 'left',
+              values: ('城管事件,城管事件1,城管事件2').split(','),
+              width: 100,
+              onChange: function (picker, country) {
+                if (picker.cols[1].replaceValues) {
+                  picker.cols[1].replaceValues(eventVendors[country]);
+                }
+              }
+            },
+            {
+              values: eventVendors["城管事件"],
               width: 160,
             }
           ]

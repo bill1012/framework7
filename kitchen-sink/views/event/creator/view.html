@@ -54,10 +54,21 @@
             </td>
           </tr>
           <tr>
-            <td colspan="4" class="value-cell td-img">
-               <img class="button-img-add" @click="openPopup" src="./img/beach.jpg"/>
-              <img class="button-img-add" @click="openPopup" src="./img/monkey.jpg"/>
-              <img class="button-img-add" @click="openPopup" src="./img/mountains.jpg"/>
+            <td colspan="4" class="value-cell td-img ">
+              <div class="row">
+                <div class="col col-center">
+                  <img class="button-img-add" @click="openPopup" src="./img/beach.jpg"/>
+                  <span class="text-sm">beach.jpg</span>
+                </div>
+                <div class="col col-center">
+                  <img class="button-img-add" @click="openPopup" src="./img/monkey.jpg"/>
+                  <span class="text-sm">monkey.jpg</span>
+                </div>
+                <div class="col col-center">
+                  <img class="button-img-add" @click="openPopup" src="./img/mountains.jpg"/>
+                  <span class="text-sm">mountains.jpg</span>
+                </div>
+              </div>
             </td>
           </tr>
           </tbody>
@@ -87,22 +98,22 @@
         ],
       }
     },
-    methods:{
+    methods: {
       openPopup: function () {
         const self = this;
         self.popup.open();
       }
     },
-    on:{
-      pageInit:function () {
-        const self=this;
+    on: {
+      pageInit: function () {
+        const self = this;
         self.popup = self.$app.photoBrowser.create({
           photos: self.photos,
           type: 'popup',
         });
       },
-      pageBeforeRemove:function () {
-        const self=this;
+      pageBeforeRemove: function () {
+        const self = this;
         self.popup.destroy();
       }
     }

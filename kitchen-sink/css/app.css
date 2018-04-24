@@ -931,8 +931,8 @@ a.tab-li:active {
   padding:10px!important;
 }
 .button-img-add{
-  width:4em;
-  height:4em!important;
+  width:5em;
+  height:5em!important;
 }
 
 .button-img-add i{
@@ -947,5 +947,12 @@ a.tab-li:active {
   background: #ffffff !important;
 }
 
+.col-center{
+  text-align: center;
+}
+.text-sm{
+  font-size:12px;
+  text-align: left;
+}
 /*.................通讯录end..........*/
 
