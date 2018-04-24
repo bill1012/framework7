@@ -1,0 +1,97 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">在线批示</div>
+        <div class="right">
+          <a class="link icon-only" @click="saveReport">
+            <i class="icon material-icons">check</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="toolbar toolbar-bottom-md">
+      <div class="toolbar-inner">
+        <button class="button button-outline" @click="transferTodo">
+          <i class="material-icons icon-button">link</i>
+          <span class="button-label">相关批示</span>
+        </button>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="data-table">
+        <table>
+          <tbody>
+          <tr>
+            <td class="label-cell">信息标题</td>
+            <td class="value-cell" colspan="3">关于社区北墙有人破坏的批示</td>
+          </tr>
+          <tr>
+            <td colspan="4" class="textarea-cell textarea-cell-top">
+              <div class="value-cell-text value-cell-text-bg">
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-input-wrap">
+                      <textarea class="textarea-cell-text" placeholder="请在这里填写批示内容">这是一个振奋人心的消息。河北雄安新区设立一周年之际，党中央、国务院对《河北雄安新区规划纲要》作出批复，同意实施这一规划，雄安新区迎来高标准建设开局的起步时刻。一个荷塘苇海、城绿交融、创新驱动、宜居宜业的现代化城市，在蓝图中依稀可见。</textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
+<style>
+  .value-cell {
+    width: 75% !important;
+  }
+</style>
+<style>
+  .textarea-cell-top {
+    vertical-align: top;
+    font-size: 16px !important;
+  }
+
+  .value-cell-text-bg {
+    font-size: 16px !important;
+  }
+
+</style>
+<script>
+  return {
+    methods: {
+        transferTodo: function () {
+          this.$router.navigate("/event/leader/leader-relative/")
+        },
+      saveReport: function () {
+        var app = this.$app;
+        app.dialog.confirm('确认将此批示下发吗？', function () {
+          app.dialog.alert("下发成功");
+        });
+      },
+      selectDept: function () {
+        app.popup.open(".dept-popup");
+      },
+      selectLeader: function () {
+        var $ = this.$;
+        var app = this.$app;
+        var arr = [];
+        $("[name='dept-checkbox']:checked").each(function (index, item) {
+          var itemVal = $(item).val();
+          arr.push(itemVal);
+        })
+        $("#deptReceiver").text(arr.join());
+        app.popup.close(".dept-popup");
+      }
+    }
+  }
