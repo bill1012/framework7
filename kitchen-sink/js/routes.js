@@ -513,6 +513,11 @@ var routes = [
     path: '/event/add/',
     url: './views/add.html',
   },
+
+  {
+    path: '/event/contact/',
+    url: './views/contact.html',
+  },
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',

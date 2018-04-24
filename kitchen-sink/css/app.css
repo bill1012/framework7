@@ -888,133 +888,28 @@ code {
   color: #2196f3 !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*.................事件报告start..........*/
-.badge-new{
-  color:#ff0000;
-  background-color:inherit!important;
-  font-size:20px!important;
-  vertical-align:super!important;
+.badge-new {
+  color: #ff0000;
+  background-color: inherit !important;
+  font-size: 20px !important;
+  vertical-align: super !important;
 }
-
 
 /*.................事件报告end..........*/
 
+/*.................通讯录start..........*/
+.toolbar-content {
+  font-size: 16px;
+  background: #ffffff !important;
+}
+
+a.tab-link-text {
+  color: #212121 !important;
+}
+
+a.tab-li:active {
+  color: #2196F3 !important;
+}
+
+/*.................通讯录end..........*/
