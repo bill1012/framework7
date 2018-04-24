@@ -480,46 +480,46 @@ var routes = [
       },
     },
   },
-
-  {
-    path: '/event/index/',
-    url:'./views/index.html'
-  },
-  {
-    path: '/event/list/',
-    componentUrl: './views/list.html',
-  },
-  {
-    path: '/event/view/',
-    componentUrl: './views/view.html',
-  },
-  {
-    path: '/event/leader-view/',
-    componentUrl: './views/leader-view.html',
-  },
-  {
-    path: '/event/leader-transfer/',
-    componentUrl: './views/leader-transfer.html',
-  },
-  {
-    path: '/event/report/',
-    componentUrl: './views/report.html',
-  },
   {
     path: '/event/login/',
     url: './views/login.html',
   },
   {
-    path: '/event/add/',
-    componentUrl: './views/add.html',
+    path: '/index/',
+    url:'./views/index.html'
   },
   {
-    path: '/event/add-view/',
-    componentUrl: './views/add-view.html',
+    path: '/event/list/',
+    componentUrl: './views/event/list.html',
   },
   {
-    path: '/event/add-view-leader/',
-    componentUrl: './views/add-view-leader.html',
+    path: '/event/handler/view/',
+    componentUrl: './views/event/handler/view.html',
+  },
+  {
+    path: '/event/handler/view-approval/',
+    componentUrl: './views/event/handler/view-approval.html',
+  },
+  {
+    path: '/event/handler/transfer/',
+    componentUrl: './views/event/handler/transfer.html',
+  },
+  {
+    path: '/event/handler/report/',
+    componentUrl: './views/event/handler/report.html',
+  },
+
+  {
+    path: '/event/creator/add/',
+    componentUrl: './views/event/creator/add.html',
+  },
+  {
+    path: '/event/creator/view/',
+    componentUrl: './views/event/creator/view.html',
+  },
+  {
+    path: '/event/creator/view-approval/',
+    componentUrl: './views/event/creator/view-approval.html',
   },
   // Default route (404 page). MUST BE THE LAST
   {
