@@ -956,3 +956,25 @@ a.tab-li:active {
 }
 /*.................通讯录end..........*/
 
+.item-img-text{
+  margin-top: 0.5em!important;
+}
+.item-img .item-media{
+  padding-bottom: 5px!important;
+}
+
+.item-text-new {
+  font-size: 14px;
+  color: #595959;
+  line-height: 20px;
+  margin-top: 0.2em;
+}
+
+.item-time {
+  text-align: right;
+  margin-top: 0.2em;
+  margin-right:5px;
+  font-size: 14px;
+  color: #747474;
+  line-height: 20px;
+}

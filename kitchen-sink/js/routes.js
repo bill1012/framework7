@@ -536,18 +536,18 @@ var routes = [
   },
 
   {
-    path: '/event/leader/leader-view/',
-    componentUrl: './views/event/leader/leader-view.html',
+    path: '/event/leader/view/',
+    componentUrl: './views/event/leader/view.html',
   },
 
   {
-    path: '/event/leader/leader-transfer/',
-    componentUrl: './views/event/leader/leader-transfer.html',
+    path: '/event/leader/approval/',
+    componentUrl: './views/event/leader/approval.html',
   },
 
   {
-    path: '/event/leader/leader-relative/',
-    componentUrl: './views/event/leader/leader-relative.html',
+    path: '/event/leader/reference/',
+    componentUrl: './views/event/leader/reference.html',
   },
   // Default route (404 page). MUST BE THE LAST
   {

@@ -51,34 +51,69 @@
           </tr>
           <tr>
             <td class="label-cell" style="background-color: #e9e9e9">拟办意见</td>
-            <td class="value-cell value-cell-flow" colspan="3">
-              <div class="item-content item-input">
-                <div class="item-inner">
-                  <div class="item-input-wrap">
-                    <textarea class="textarea-cell-text" style="min-height:6em;" placeholder="请在这里写拟办意见"></textarea>
-                  </div>
-                </div>
-              </div>
+            <td class="value-cell value-cell-flow" style="min-height:6em;height:6em;" colspan="3">
+              这里是填写的拟办意见
             </td>
-          </tr>
           </tr>
           </tbody>
         </table>
+      </div>
+      <div class="list media-list data-list" style="margin-top:0!important;margin-bottom: 4em;">
+        <ul>
+          <li class="swipeout">
+            <div class="item-content swipeout-content">
+              <div class="item-media" style="display: block!important;">
+                <img src="./img/monkey.jpg" class="img-user"/>
+                <div  class="item-text-new text-sm item-img-text" style="text-align: center;display: block">胡晓坤</div>
+              </div>
+              <div class="item-inner">
+                <div class="item-text-new">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis
+                  tellus ut
+                  turpis condimentum, ut dignissim lacus tincidunt.
+                </div>
+                <div class="item-time">2018/12/20 14:35</div>
+              </div>
+            </div>
+            <div class="swipeout-actions-right">
+              <a href="#" data-confirm="Are you sure you want to delete this item?" class="swipeout-delete">Delete</a>
+            </div>
+          </li>
+        </ul>
+        <ul>
+          <li class="swipeout">
+            <div class="item-content swipeout-content">
+              <div class="item-media" style="display: block!important;">
+                <img src="./img/monkey.jpg" class="img-user button-img-add"/>
+                <div  class="item-text-new text-sm item-img-text" style="text-align: center;display: block">胡晓坤</div>
+              </div>
+              <div class="item-inner">
+                <div class="item-text-new">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis
+                  tellus ut
+                  turpis condimentum, ut dignissim lacus tincidunt.
+                </div>
+                <div class="item-time">2018/12/20 14:35</div>
+              </div>
+            </div>
+            <div class="swipeout-actions-right">
+              <a href="#" data-confirm="Are you sure you want to delete this item?" class="swipeout-delete">Delete</a>
+            </div>
+          </li>
+        </ul>
+
       </div>
     </div>
   </div>
 </template>
 <style>
-  .value-cell{
-    width: 75%!important;
+  .value-cell {
+    width: 75% !important;
   }
-
 </style>
 <script>
   return {
     methods: {
       transferTodo: function () {
-        this.$router.navigate("/event/leader/leader-transfer/")
+        this.$router.navigate("/event/leader/approval/")
       }
     }
   }
