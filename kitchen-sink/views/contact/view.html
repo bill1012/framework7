@@ -41,7 +41,7 @@
             <div class="item-inner">
               <div class="item-title item-label">办公电话</div>
               <div class="item-after">
-                <i class="material-icons">phone</i>
+                <i class="material-icons icon-right">phone</i>
               </div>
             </div>
 
@@ -50,9 +50,9 @@
             <div class="item-inner">
               <div class="item-title item-label">常用手机</div>
               <div class="item-after">
-                475572229@qq.com
-                <i class="material-icons">phone</i>
-                <i class="material-icons">email</i>
+                <span>138XXXXXXXX</span>
+                <i class="material-icons icon-right">phone</i>
+                <i class="material-icons icon-right">email</i>
               </div>
             </div>
 
@@ -61,8 +61,8 @@
             <div class="item-inner">
               <div class="item-title item-label">备用手机</div>
               <div class="item-after">
-                <i class="material-icons">phone</i>
-                <i class="material-icons">email</i>
+                <i class="material-icons icon-right">phone</i>
+                <i class="material-icons icon-right">email</i>
               </div>
             </div>
 
@@ -71,15 +71,15 @@
             <div class="item-inner">
               <div class="item-title item-label">性别</div>
               <div class="item-after">
-                 男
+                男
               </div>
             </div>
           </li>
           <li class="item-content">
             <div class="item-inner">
               <div class="item-title item-label">所属群组</div>
-              <div class="item-after" >
-               群组1
+              <div class="item-after">
+                群组1
               </div>
             </div>
           </li>
@@ -97,13 +97,15 @@
     </div>
   </div>
 </template>
-
+<style>
+  .icon-right {
+    margin-left: 0.8em;
+    color: #202020;
+  }
+</style>
 <script>
   return {
-    methods: {
-
-
-    },
+    methods: {},
     on: {
       pageInit: function (e, page) {
 

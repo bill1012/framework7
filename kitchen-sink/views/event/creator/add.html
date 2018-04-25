@@ -114,7 +114,9 @@
           renderToolbar: function () {
             return '<div class="toolbar">' +
               '<div class="toolbar-inner">' +
-              '<div class="left"></div>' +
+              '<div class="left">' +
+              '<a href="#" class="link sheet-close popover-close"><i class="material-icons">cancel</i> </a>' +
+              '</div>' +
               '<div class="title">选择事发地点</div> ' +
               '<div class="right">' +
               '<a href="#" class="link sheet-close popover-close"><i class="material-icons">check</i> </a>' +
@@ -126,7 +128,7 @@
             {
               textAlign: 'left',
               values: ('东城区,西城区,海淀区,朝阳,丰台,门头沟,石景山,房山,通州,顺义,昌平,大兴,怀柔,平谷,延庆,密云').split(','),
-              width: 100,
+              width: 140,
               onChange: function (picker, country) {
                 if (picker.cols[1].replaceValues) {
                   picker.cols[1].replaceValues(carVendors[country]);
@@ -135,7 +137,7 @@
             },
             {
               values: carVendors["东城区"],
-              width: 160,
+              width: 140,
             }
           ]
         });
@@ -153,7 +155,9 @@
           renderToolbar: function () {
             return '<div class="toolbar">' +
               '<div class="toolbar-inner">' +
-              '<div class="left"></div>' +
+              '<div class="left">' +
+              '<a href="#" class="link sheet-close popover-close"><i class="material-icons">cancel</i> </a>' +
+              '</div>' +
               '<div class="title">选择事件类型</div> ' +
               '<div class="right">' +
               '<a href="#" class="link sheet-close popover-close"><i class="material-icons">check</i> </a>' +
@@ -165,7 +169,7 @@
             {
               textAlign: 'left',
               values: ('城管事件,城管事件1,城管事件2').split(','),
-              width: 100,
+              width: 140,
               onChange: function (picker, country) {
                 if (picker.cols[1].replaceValues) {
                   picker.cols[1].replaceValues(eventVendors[country]);
@@ -174,7 +178,7 @@
             },
             {
               values: eventVendors["城管事件"],
-              width: 160,
+              width: 140,
             }
           ]
         });
