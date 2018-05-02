@@ -593,6 +593,35 @@ var routes = [
     path:"/resource/equipment-detail/",
     componentUrl:'./views/resource/equipment-detail.html'
   },
+
+  {
+    path:"/resource/rescue/",
+    componentUrl:'./views/resource/rescue.html'
+  },
+
+  {
+    path:"/resource/rescue-detail/",
+    componentUrl:'./views/resource/rescue-detail.html'
+  },
+
+  {
+    path:"/resource/shelter/",
+    componentUrl:'./views/resource/shelter.html'
+  },
+
+  {
+    path:"/resource/shelter-detail/",
+    componentUrl:'./views/resource/shelter-detail.html'
+  },
+
+  {
+    path:"/resource/case/",
+    componentUrl:'./views/resource/case.html'
+  },
+  {
+    path:"/resource/case-detail/",
+    componentUrl:'./views/resource/case-detail.html'
+  },
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',

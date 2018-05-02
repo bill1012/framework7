@@ -1,0 +1,51 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">典型案例</div>
+      </div>
+    </div>
+    <div class="page-content typical-detail">
+      <h2 class="block-title text-center">突发事件案例名称</h2>
+      <div class="block">
+        <p>Cards are a great way to contain and organize your information, especially when combined with List Views.
+          Cards can contain unique related data, like for example photos, text or links about a particular subject.
+          Cards are typically an entry point to more complex and detailed information.</p>
+        <p>Cards are a great way to contain and organize your information, especially when combined with List Views.
+          Cards can contain unique related data, like for example photos, text or links about a particular subject.
+          Cards are typically an entry point to more complex and detailed information.Cards are a great way to contain
+          and organize your information.</p>
+
+        <div class="row">
+          <div class="col col-center">
+            <img class="button-img-add" @click="openPopup" src="./img/beach.jpg"/>
+          </div>
+          <div class="col col-center">
+            <img class="button-img-add" @click="openPopup" src="./img/monkey.jpg"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    </div>
+</template>
+<style>
+
+.typical-detail .button-img-add{
+  width:70%;
+  height:70%!important;
+}
+
+.typical-detail .block-title{
+  font-size:18px;
+  font-weight: bold;
+  line-height:24px;
+}
+</style>
