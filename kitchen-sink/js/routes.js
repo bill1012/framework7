@@ -573,6 +573,14 @@ var routes = [
     path:"/plan/detail/",
     componentUrl:'./views/plan/detail.html'
   },
+  {
+    path:"/resource/danger/",
+    componentUrl:'./views/resource/danger.html'
+  },
+  {
+    path:"/resource/danger/detail/",
+    componentUrl:'./views/resource/danger-detail.html'
+  },
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',
