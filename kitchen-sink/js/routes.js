@@ -482,7 +482,7 @@ var routes = [
   },
   {
     path: '/login/',
-    url: './views/login.html',
+    url: './views/login.html'
   },
   {
     path: '/index/',
@@ -490,68 +490,92 @@ var routes = [
   },
   {
     path: '/event/list/',
-    componentUrl: './views/event/list.html',
+    componentUrl: './views/event/list.html'
   },
   {
     path: '/event/handler/view/',
-    componentUrl: './views/event/handler/view.html',
+    componentUrl: './views/event/handler/view.html'
   },
   {
     path: '/event/handler/view-approval/',
-    componentUrl: './views/event/handler/view-approval.html',
+    componentUrl: './views/event/handler/view-approval.html'
   },
   {
     path: '/event/handler/transfer/',
-    componentUrl: './views/event/handler/transfer.html',
+    componentUrl: './views/event/handler/transfer.html'
   },
   {
     path: '/event/handler/report/',
-    componentUrl: './views/event/handler/report.html',
+    componentUrl: './views/event/handler/report.html'
   },
 
   {
     path: '/event/creator/add/',
-    componentUrl: './views/event/creator/add.html',
+    componentUrl: './views/event/creator/add.html'
   },
   {
     path: '/event/creator/view/',
-    componentUrl: './views/event/creator/view.html',
+    componentUrl: './views/event/creator/view.html'
   },
   {
     path: '/event/creator/view-approval/',
-    componentUrl: './views/event/creator/view-approval.html',
+    componentUrl: './views/event/creator/view-approval.html'
   },
 
   {
     path: '/contact/home/',
-    url: './views/contact/home.html',
+    url: './views/contact/home.html'
   },
   {
     path: '/contact/add/',
-    componentUrl:'./views/contact/add.html',
+    componentUrl:'./views/contact/add.html'
   },
   {
     path: '/contact/view/',
-    componentUrl:'./views/contact/view.html',
+    componentUrl:'./views/contact/view.html'
   },
 
   {
     path: '/event/leader/view/',
-    componentUrl: './views/event/leader/view.html',
+    componentUrl: './views/event/leader/view.html'
   },
 
   {
     path: '/event/leader/approval/',
-    componentUrl: './views/event/leader/approval.html',
+    componentUrl: './views/event/leader/approval.html'
   },
 
   {
     path: '/event/leader/reference/',
-    componentUrl: './views/event/leader/reference.html',
+    componentUrl: './views/event/leader/reference.html'
+  },
+  {
+    path:"/duty/home/",
+    componentUrl:'./views/duty/home.html'
+  },
+  {
+    path:"/resource/home/",
+    componentUrl:'./views/resource/home.html'
+  },
+  {
+    path:"/resource/expert/",
+    componentUrl:'./views/resource/expert.html'
+  },
+  {
+    path:"/resource/expert/detail/",
+    componentUrl:'./views/resource/expert-detail.html'
+  },
+  {
+    path:"/plan/home/",
+    componentUrl:'./views/plan/home.html'
+  },
+  {
+    path:"/plan/detail/",
+    componentUrl:'./views/plan/detail.html'
   },
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',
-    url: './pages/404.html',
+    url: './pages/404.html'
   },
 ];

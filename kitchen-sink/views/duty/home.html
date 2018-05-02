@@ -1,0 +1,236 @@
+<!--suppress ALL -->
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">应急值排</div>
+
+        <div class="right">
+          <a class="link icon-only" @click="selectDate">
+            <i class="icon f7-icons ios-only">calendar</i>
+            <i class="icon material-icons md-only">date_range</i>
+            <input type="hidden" id="cur_date" name="cur_date">
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="toolbar toolbar-bottom-md">
+      <div class="toolbar-inner">
+        <button class="button button-outline" @click="openDeptPicker">
+          <i class="material-icons icon-button">format_align_left</i>
+          <span class="button-label">选择机构</span>
+          <input type="hidden" id="dept">
+        </button>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="card card-red">
+        <div class="card-content card-content-padding text-center duty-content">
+          <span class="label-cell-content">开发区政府应急办</span>
+          <div class="duty-tel">
+            <span>010-86538989</span>
+            <i class="material-icons icon-right">phone</i>
+          </div>
+          <div>
+            2017年12月18日 星期三
+          </div>
+        </div>
+      </div>
+      <div class="data-table duty-table">
+        <table>
+          <tbody>
+          <tr class="border-top">
+            <td class="label-cell col-25">带班领导</td>
+            <td class="value-cell col-75" colspan="3">
+              <div class="row">
+                <div class="col left user-name">欧阳娜娜</div>
+                <div class="col right">日常行政职务</div>
+              </div>
+              <div class="row">
+                <div class="col left">13601047878</div>
+                <div class="col right"><i class="material-icons icon-right">phone</i></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell col-25">值班主任</td>
+            <td class="value-cell col-75" colspan="3">
+              <div class="row">
+                <div class="col left user-name">欧阳娜娜</div>
+                <div class="col right">日常行政职务</div>
+              </div>
+              <div class="row">
+                <div class="col left">13601047878</div>
+                <div class="col right"><i class="material-icons icon-right">phone</i></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell col-25">值班副班</td>
+            <td class="value-cell col-75" colspan="3">
+              <div class="row">
+                <div class="col left user-name">欧阳娜娜</div>
+                <div class="col right">日常行政职务</div>
+              </div>
+              <div class="row">
+                <div class="col left">13601047878</div>
+                <div class="col right"><i class="material-icons icon-right">phone</i></div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
+<style>
+  .duty-content {
+    font-size: 16px;
+  }
+
+  .duty-content .label-cell-content {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: white !important;
+  }
+
+  .duty-content .duty-tel {
+    margin: 10px 0;
+  }
+
+  .duty-content .icon-right {
+    margin-left: 1.2em;
+  }
+
+  .data-table .col-25 {
+    width: 25% !important;
+  }
+
+  .data-table .col-75 {
+    width: 75% !important;
+  }
+
+  .data-table tr.border-top {
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .duty-table {
+    margin-top: 20px;
+  }
+
+  .duty-table .left {
+    text-align: left;
+  }
+
+  .duty-table .right {
+    text-align: right;
+  }
+
+  .duty-table .row {
+    margin: 16px 0;
+  }
+
+  .duty-table .user-name {
+    font-weight: bold;
+  }
+
+  .duty-table .col-75 div.row:last-child {
+    margin-bottom: 8px !important;
+  }
+
+  .card-red {
+    background-color: #2196f3;
+    color: #ffffff !important;
+  }
+</style>
+
+<script>
+  return {
+    methods: {
+      openDeptPicker: function () {
+        this.pickerDept.open();
+      },
+      selectDate:function () {
+        this.calendarModal.open();
+      }
+    },
+    on: {
+      pageInit: function (e, page) {
+        var self = this;
+        var app = this.$app;
+        var deptVendors = {
+          "一级部门": ['东城区1', '东城区3', '东城区2', '东城区4', '东城区5'],
+          "一级部门1": ['西城区1', '西城区2', '西城区3', '西城区4', '西城区5'],
+          "一级部门2": ['东升乡', '学院路街道', '西三旗街道', '双清路街道']
+        };
+        self.pickerDept = app.picker.create({
+          inputEl: "#dept",
+          rotateEffect: false,
+          formatValue: function (values) {
+            return values[0] + " " + values[1];
+          },
+          renderToolbar: function () {
+            return '<div class="toolbar">' +
+              '<div class="toolbar-inner">' +
+              '<div class="left">' +
+              '<a href="#" class="link sheet-close popover-close"><i class="material-icons">cancel</i> </a>' +
+              '</div>' +
+              '<div class="title">选择机构</div> ' +
+              '<div class="right">' +
+              '<a href="#" class="link sheet-close popover-close"><i class="material-icons">check</i> </a>' +
+              '</div>' +
+              '</div>' +
+              '</div>';
+          },
+          cols: [
+            {
+              textAlign: 'left',
+              values: ('一级部门,一级部门1,一级部门2').split(','),
+              width: 140,
+              onChange: function (picker, country) {
+                if (picker.cols[1].replaceValues) {
+                  picker.cols[1].replaceValues(deptVendors[country]);
+                }
+              }
+            },
+            {
+              values: deptVendors["一级部门"],
+              width: 140,
+            }
+          ],
+          on: {
+            change: function (picker, values, displayValues) {
+              //app.dialog.alert(values[0] + values[1]);
+            }
+          }
+        });
+
+        self.calendarModal = app.calendar.create({
+          inputEl: '#cur_date',
+          openIn: 'customModal',
+          header: true,
+          footer: true,
+          dateFormat: 'yyyy年mm月dd日',
+        });
+      },
+      pageBeforeRemove: function () {
+        this.pickerDept.destroy();
+        this.calendarModal.destroy();
+      }
+    }
+  }
+</script>
+
+
+

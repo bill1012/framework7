@@ -633,7 +633,7 @@ code {
 .data-table .value-cell {
   text-align: left;
   width: 25%;
-  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  border-left: 1px solid #e0e0e0;
   font-size: 16px;
 
 }
@@ -654,7 +654,7 @@ code {
 }
 
 .data-table .border-left {
-  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  border-left: 1px solid #e0e0e0;
 }
 
 .data-table .cell-icon {
@@ -682,7 +682,7 @@ code {
 }
 
 .data-table tr {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid #e0e0e0;
 
 }
 
@@ -892,7 +892,7 @@ code {
 .badge-new {
   color: #ff0000;
   background-color: inherit !important;
-  font-size: 20px !important;
+  font-size: 16px !important;
   vertical-align: super !important;
 }
 
@@ -959,6 +959,7 @@ a.tab-li:active {
 .item-img-text{
   margin-top: 0.5em!important;
 }
+
 .item-img .item-media{
   padding-bottom: 5px!important;
 }
@@ -977,4 +978,12 @@ a.tab-li:active {
   font-size: 14px;
   color: #747474;
   line-height: 20px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.searchbar input[type="search"]{
+  font-size:16px!important;
 }

@@ -1,0 +1,205 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">应急预案</div>
+      </div>
+    </div>
+    <div class="toolbar toolbar-bottom-md">
+      <div class="toolbar-inner">
+        <button class="button button-outline">
+          <i class="material-icons icon-button">view_list</i>
+          <span class="button-label">潍坊市应急办</span>
+        </button>
+      </div>
+    </div>
+    <div class="page-content">
+      <div>
+        <form data-search-container=".search-list" data-search-in=".item-title" class="searchbar searchbar-init">
+          <div class="searchbar-inner">
+            <div class="searchbar-input-wrap">
+              <input type="search" placeholder="请输入预案名称检索"/>
+              <i class="searchbar-icon"></i>
+              <span class="input-clear-button"></span>
+            </div>
+            <span class="searchbar-disable-button">Cancel</span>
+          </div>
+        </form>
+      </div>
+      <div class="searchbar-backdrop"></div>
+      <div class="list simple-list searchbar-not-found" style="margin-top:0px;">
+        <ul>
+          <li>
+            <a href="#" class="item-link"> 未找到记录</a>
+          </li>
+        </ul>
+      </div>
+      <div class="list search-list searchbar-found" style="margin-top:0px;">
+        <div class="list-group plan-div data-list">
+          <ul>
+            <li class="list-group-title">
+                <i class="material-icons" style="vertical-align: middle">assignment</i>
+                <span class="title-text" >总体预案</span>
+            </li>
+            <li>
+              <a href="/plan/detail/" class="item-link item-content">
+                <div class="item-media item-content-icon" style="background-color: #2196f3;">
+                  <i class="icon icon-female"></i>
+                </div>
+                <div class="item-inner item-cell">
+                  <div class="item-title item-title-bg">
+                    国家突发公共事件总体预案
+                  </div>
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell text-left"> 编制单位
+                    </div>
+                    <div class="item-cell text-right"> 发布时间
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li class="list-group-title">
+              <i class="material-icons" style="vertical-align: middle">assignment</i>
+              <span class="title-text" >专项预案</span>
+            </li>
+            <li>
+              <a href="/plan/detail/" class="item-link item-content">
+                <div class="item-media item-content-icon" style="background-color: #2196f3;">
+                  <i class="icon icon-female"></i>
+                </div>
+                <div class="item-inner item-cell">
+                  <div class="item-title item-title-bg">
+                    集团公司安全事故应急预案1
+                  </div>
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell text-left"> 潍坊市应急办
+                    </div>
+                    <div class="item-cell text-right"> 2017-12-30
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/plan/detail/" class="item-link item-content">
+                <div class="item-media item-content-icon" style="background-color: #2196f3;">
+                  <i class="icon icon-female"></i>
+                </div>
+                <div class="item-inner item-cell">
+                  <div class="item-title item-title-bg">
+                    集团公司安全事故应急预案2
+                  </div>
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell text-left"> 潍坊市应急办
+                    </div>
+                    <div class="item-cell text-right"> 2017-12-30
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li class="list-group-title">
+              <i class="material-icons" style="vertical-align: middle">assignment</i>
+              <span class="title-text" >部门预案</span>
+            </li>
+            <li>
+              <a href="/plan/detail/" class="item-link item-content">
+                <div class="item-media item-content-icon" style="background-color: #2196f3;">
+                  <i class="icon icon-male"></i>
+                </div>
+                <div class="item-inner item-cell">
+                  <div class="item-title item-title-bg">
+                    集团公司部门安全事故应急预案1
+                  </div>
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell text-left"> 潍坊市应急办
+                    </div>
+                    <div class="item-cell text-right"> 2017-12-30
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/plan/detail/" class="item-link item-content">
+                <div class="item-media item-content-icon" style="background-color: #2196f3;">
+                  <i class="icon icon-male"></i>
+                </div>
+                <div class="item-inner item-cell">
+                  <div class="item-title item-title-bg">
+                    集团公司部门安全事故应急预案2
+                  </div>
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell text-left"> 潍坊市应急办
+                    </div>
+                    <div class="item-cell text-right"> 2017-12-30
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<style>
+  .plan-div .title-text{
+    font-weight: bold;
+    margin-left:8px;
+  }
+  .plan-div .item-content-icon{
+    margin: .5em auto;
+    border-radius: 50%;
+    color: #ffffff;
+    width: 3em;
+    height: 3em;
+  }
+  .plan-div .item-title-bg {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+
+  .plan-div .icon-female {
+    background: url(./img/female.png) no-repeat center;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+  }
+
+  .plan-div .icon-male {
+    background: url(./img/male.png) no-repeat center;
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+  }
+
+  .plan-div .item-row-sm {
+    font-size: 14px !important;
+    margin-top:0!important;
+  }
+
+  .plan-div .text-left {
+    text-align: left;
+  }
+
+  .plan-div .text-right {
+    text-align: right;
+    margin-right:8px;
+  }
+</style>
