@@ -1,0 +1,183 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">物资/装备</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div>
+        <form data-search-container=".search-list" data-search-in=".item-title" class="searchbar searchbar-init">
+          <div class="searchbar-inner">
+            <div class="searchbar-input-wrap">
+              <input type="search" placeholder="请输入物资名称"/>
+              <i class="searchbar-icon"></i>
+              <span class="input-clear-button"></span>
+            </div>
+            <span class="searchbar-disable-button">Cancel</span>
+          </div>
+        </form>
+      </div>
+      <div class="searchbar-backdrop"></div>
+      <div class="list simple-list searchbar-not-found" style="margin-top:0px;">
+        <ul>
+          <li>
+            <a href="#" class="item-link"> 未找到记录</a>
+          </li>
+        </ul>
+      </div>
+      <div class="list search-list searchbar-found" style="margin-top:0px;">
+        <div class="list-group danger-div data-list">
+          <ul>
+            <li class="list-group-title">
+              物资大类
+            </li>
+            <li>
+              <a href="/resource/danger/detail/" class="item-link item-content">
+                <div class="item-media item-content-icon icon-blue">
+                  <span>个</span>
+                </div>
+                <div class="item-inner item-cell">
+                  <div class="item-title item-title-bg">
+                    干粉灭火器-物资（10公斤）
+                  </div>
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell text-left">
+                      海淀区知春路中海事业大厦一层海淀区知春路中海事业大厦一层
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="/resource/danger/detail/" class="item-link item-content">
+                <div class="item-media item-content-icon icon-blue">
+                  <span>台</span>
+                </div>
+                <div class="item-inner item-cell">
+                  <div class="item-title item-title-bg">
+                    干粉灭火器-物资（8公斤）
+                  </div>
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell text-left">
+                      海淀区知春路中海事业大厦一层
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="/resource/danger/detail/" class="item-link item-content">
+                <div class="item-media item-content-icon icon-blue">
+                  <span>瓶</span>
+                </div>
+                <div class="item-inner item-cell">
+                  <div class="item-title item-title-bg">
+                    干粉灭火器-物资（8公斤）
+                  </div>
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell text-left">
+                      海淀区知春路中海事业大厦一层
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li class="list-group-title">
+              装备大类2
+            </li>
+            <li>
+              <a href="/resource/danger/detail/" class="item-link item-content">
+                <div class="item-media item-content-icon icon-blue">
+                  <span>捆</span>
+                </div>
+                <div class="item-inner item-cell">
+                  <div class="item-title item-title-bg">
+                    干粉灭火器-装备（10公斤）
+                  </div>
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell text-left">
+                      海淀区知春路中海事业大厦一层
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="/resource/danger/detail/" class="item-link item-content">
+                <div class="item-media item-content-icon icon-blue">
+                  <span>箱</span>
+                </div>
+                <div class="item-inner item-cell">
+                  <div class="item-title item-title-bg">
+                    干粉灭火器-装备（10公斤）
+                  </div>
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell text-left">
+                      海淀区知春路中海事业大厦一层
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<style>
+
+  .danger-div .item-content-icon {
+    margin: .5em auto;
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    border: 2px solid;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .danger-div .item-title-bg {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .danger-div .icon-blue {
+    color: #2196f3 !important;
+    border-color: #2196f3;
+  }
+
+  .danger-div .item-row-sm {
+    font-size: 14px !important;
+    margin-top: 0 !important;
+  }
+
+  .danger-div .text-left {
+    text-align: left;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .danger-div .text-right {
+    text-align: right;
+    margin-right: 8px;
+  }
+</style>

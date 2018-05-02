@@ -581,6 +581,18 @@ var routes = [
     path:"/resource/danger/detail/",
     componentUrl:'./views/resource/danger-detail.html'
   },
+  {
+    path:"/resource/material-equipment/",
+    componentUrl:'./views/resource/material-equipment.html'
+  },
+  {
+    path:"/resource/material-detail/",
+    componentUrl:'./views/resource/material-detail.html'
+  },
+  {
+    path:"/resource/equipment-detail/",
+    componentUrl:'./views/resource/equipment-detail.html'
+  },
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',
