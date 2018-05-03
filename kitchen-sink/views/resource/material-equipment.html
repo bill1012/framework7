@@ -1,3 +1,4 @@
+<!--suppress ALL -->
 <template>
   <div class="page">
     <div class="navbar">
@@ -9,6 +10,11 @@
           </a>
         </div>
         <div class="title">物资/装备</div>
+        <div class="right">
+          <a href="#" class="link sheet-close" @click="toggleTab">
+            <i class="material-icons">menu</i>
+          </a>
+        </div>
       </div>
     </div>
     <div class="page-content">
@@ -181,3 +187,45 @@
     margin-right: 8px;
   }
 </style>
+
+<script>
+  return {
+    methods:{
+      toggleTab:function () {
+        this.actions.open();
+      }
+    },
+    on:{
+      pageInit:function () {
+        var self=this;
+        var buttons = [
+          // First Group
+          [
+            {
+              text: '物资列表',
+              bold: true,
+              //icon: '<i class="material-icons">description</i>',
+              onClick: function () {
+                app.dialog.alert("取消了");
+              }
+            }
+          ],
+          [
+            {
+              text: '装备列表',
+              bold: true,
+              //icon: '<i class="material-icons">description</i>',
+              onClick: function () {
+                app.dialog.alert("取消了");
+              }
+            }
+          ]
+        ];
+        self.actions = self.$app.actions.create({buttons: buttons});
+      },
+      pageBeforeRemove:function () {
+        this.actions.destroy();
+      }
+    }
+  }
+</script>
