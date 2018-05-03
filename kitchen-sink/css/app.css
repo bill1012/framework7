@@ -987,3 +987,7 @@ a.tab-li:active {
 .searchbar input[type="search"]{
   font-size:16px!important;
 }
+
+.searchbar-inner{
+  width: 90%!important;
+}
