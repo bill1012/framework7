@@ -1,0 +1,143 @@
+<!--suppress ALL -->
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">快速处置</div>
+        <div class="right">
+          <a class="link icon-only" href="/contact/home/">
+            <i class="icon f7-icons ios-only">chats-fill</i>
+            <i class="icon material-icons md-only">textsms</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="toolbar toolbar-bottom-md">
+      <div class="toolbar-inner">
+        <button class="button button-outline" @click="transferTodo">
+          <i class="material-icons icon-button">border_color</i>
+          <span class="button-label">进展反馈</span>
+        </button>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="data-table">
+        <table>
+          <tbody>
+          <tr>
+            <td colspan="4" class="value-cell td-img ">
+              <div class="row">
+                <div class="col col-center">
+                  <img class="button-img-add" @click="openPopup" src="./img/beach.jpg"/>
+                  <span class="text-sm">beach.jpg</span>
+                </div>
+                <div class="col col-center">
+                  <img class="button-img-add" @click="openPopup" src="./img/monkey.jpg"/>
+                  <span class="text-sm">monkey.jpg</span>
+                </div>
+                <div class="col col-center">
+                  <img class="button-img-add" @click="openPopup" src="./img/mountains.jpg"/>
+                  <span class="text-sm">mountains.jpg</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell">事件标题</td>
+            <td class="value-cell" colspan="3">
+              社区北墙有人破坏
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell">事件类型</td>
+            <td class="value-cell" colspan="3">
+              城管事件=>乱丟垃圾
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell" rowspan="2">事发地点</td>
+            <td class="value-cell list" colspan="3">
+              海淀区》西三旗街道
+            </td>
+          </tr>
+          <tr>
+            <td class="value-cell" colspan="3">
+              知春路中海实业大厦11层
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell">事件等级</td>
+            <td class="value-cell" colspan="3">
+              紧急、特急、日常
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="value-cell textarea-cell">
+              这里填写事件概况这里填这里填写事件概况这里填这里填写事件概况这里填这里填写事件概况这里填写事件概况这里填写事件概况这里填写事件概况这里填写事件概况
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</template>
+<style>
+  .value-cell{
+    width: 75%!important;
+  }
+</style>
+
+<script>
+  return {
+    data: function () {
+      return {
+        photos: [
+          {
+            url: 'img/beach.jpg',
+            caption: 'Amazing beach in Goa, India'
+          },
+          {
+            url: 'img/monkey.jpg',
+            caption: 'I met this monkey in Chinese mountains'
+          },
+          {
+            url: 'img/mountains.jpg',
+            caption: 'Beautiful mountains in Zhangjiajie, China'
+          }
+        ],
+      }
+    },
+    methods: {
+      openPopup: function () {
+        const self = this;
+        self.popup.open();
+      }
+    },
+    on: {
+      pageInit: function () {
+        const self = this;
+        self.popup = self.$app.photoBrowser.create({
+          photos: self.photos,
+          type: 'popup',
+        });
+      },
+      pageBeforeRemove: function () {
+        const self = this;
+        self.popup.destroy();
+      }
+    },
+    methods: {
+      transferTodo: function () {
+        this.$router.navigate("/report/scout/process_feedback/")
+      }
+    }
+  }
+</script>

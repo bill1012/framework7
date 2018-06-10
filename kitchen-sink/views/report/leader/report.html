@@ -1,0 +1,175 @@
+<!--suppress ALL -->
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">巡防报告</div>
+        <div class="right">
+          <a class="link icon-only" href="/report/leader/fast_deal1/">
+            <i class="icon f7-icons ios-only">add</i>
+            <i class="icon material-icons md-only">add_circle</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="toolbar toolbar-bottom-md">
+      <div class="toolbar-inner">
+        <button class="button" @click="showAllBtn">
+          <i class="material-icons icon-button">filter_list</i>
+          <span class="button-label">全部</span>
+        </button>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="list data-list" style="margin-top:0px;">
+        <ul>
+          <li>
+            <a href="/event/handler/view/" class="item-link item-content">
+              <div class="item-media item-content-icon" style="background-color: #66cc33;">
+                <span class="item-content-text">日常</span>
+              </div>
+              <div class="item-inner item-cell">
+                <div class="item-title item-title-bg">
+                  桥梁私拉邪教条幅
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell"><i class="material-icons icon-sm">add_location</i> 大王庄社区
+                    </div>
+                    <div class="item-cell"><i class="material-icons icon-sm">access_time</i> 2018-07-15
+                      14:30
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-after" style="color:#2196f3;important!">
+                <i class="material-icons icon-lg">bookmark</i>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/event/leader/view/" class="item-link item-content">
+              <div class="item-media item-content-icon" style="background-color: #ff6600;">
+                <span class="item-content-text">紧急</span>
+              </div>
+              <div class="item-inner item-cell">
+                <div class="item-title item-title-bg">
+                  桥梁私拉邪教条幅
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell"><i class="material-icons icon-sm">add_location</i> 北九水社区
+                    </div>
+                    <div class="item-cell"><i class="material-icons icon-sm">access_time</i> 2018-02-13
+                      14:30
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-after" style="color:#2196f3;important!;">
+                <i class="material-icons">bookmark</i>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/event/creator/view-approval/" class="item-link item-content">
+              <div class="item-media item-content-icon" style="background-color: #ff3366;">
+                <span class="item-content-text">特急</span>
+              </div>
+              <div class="item-inner item-cell">
+                <div class="item-title item-title-bg">
+                  桥梁私拉邪教条幅
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell"><i class="material-icons icon-sm">add_location</i> 网络社区
+                    </div>
+                    <div class="item-cell"><i class="material-icons icon-sm">access_time</i> 2018-02-13
+                      14:30
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="item-after">
+
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/event/handler/view-approval/" class="item-link item-content" >
+              <div class="item-media item-content-icon" style="background-color:#66cc33;">
+                <span class="item-content-text">日常</span>
+              </div>
+              <div class="item-inner item-cell">
+                <div class="item-title item-title-bg">
+                  桥梁私拉邪教条幅（标题）
+                  <div class="item-footer item-row item-row-sm">
+                    <div class="item-cell"><i class="material-icons icon-sm">add_location</i> 网路社区
+                    </div>
+                    <div class="item-cell"><i class="material-icons icon-sm">access_time</i> 2018-02-13
+                      14:30
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-after">
+              </div>
+
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    methods: {
+      showAllBtn:function () {
+        this.actions.open();
+      }
+    },
+    on: {
+      pageBeforeRemove:function () {
+        this.actions.destroy();
+      },
+      pageInit: function(page){
+        var self=this;
+        var buttons = [
+          // First Group
+          [
+            /*{
+              text: '请选择类别',
+              label: true
+            },*/
+            {
+              text: '<i class="material-icons actions-button-icon">event</i>今 日',
+              bold: true,
+              //icon: '<i class="material-icons">search</i>',
+            }
+          ],
+          [
+            {
+              text: '<i class="material-icons actions-button-icon">event</i>本 周',
+            }
+          ],
+          // Second Group
+          [
+            {
+              text: '<i class="material-icons actions-button-icon">event</i>本 月',
+            }
+          ]
+        ];
+        self.actions = self.$app.actions.create({buttons: buttons});
+      }
+
+    }
+  }
+</script>

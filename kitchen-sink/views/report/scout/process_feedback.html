@@ -1,0 +1,121 @@
+<!--suppress ALL -->
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">进展反馈</div>
+        <div class="right">
+          <a class="link icon-only" href="/contact/home/">
+            <i class="icon f7-icons ios-only">chats-fill</i>
+            <i class="icon material-icons md-only">chat</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="toolbar toolbar-bottom-md">
+      <div class="toolbar-inner">
+        <button class="button button-outline" @click="transferTodo">
+          <i class="material-icons icon-button">check_circle</i>
+          <span class="button-label">确定</span>
+        </button>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="data-table">
+        <table>
+          <tbody>
+          <tr>
+            <td colspan="4" class="value-cell td-img">
+              <button class="button button-outline button-img-add" @click="showAllBtn">
+                <i class="material-icons">add</i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="value-cell textarea-cell" style="min-height: 300px;">
+这里填写事件处理情况。这里填写事件处理情况。这里填写事件处理情况。这里填写事件处理情况。这里填写事件处理情况。
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</template>
+<style>
+  .value-cell{
+    width: 75%!important;
+  }
+</style>
+
+
+<script>
+  return {
+    methods: {
+      showAllBtn: function () {
+        this.actions.open();
+      }
+    },
+
+    methods: {
+      transferTodo: function () {
+        this.$router.navigate("/report/scout/myfeedback/")
+      }
+    },
+    on: {
+      pageInit: function (e, page) {
+        var self = this;
+        var app = this.$app;
+        var buttons = [
+          // First Group
+          [
+            {
+              text: '选取文件',
+              bold: true,
+              //icon: '<i class="material-icons">description</i>',
+              onClick: function () {
+                app.dialog.alert("取消了");
+              }
+            }
+          ],
+          [
+            {
+              text: '拍照',
+              bold: true,
+              //icon: '<i class="material-icons">description</i>',
+              onClick: function () {
+                app.dialog.alert("取消了");
+              }
+            }
+          ],
+          [
+            {
+              text: '从相册中选取',
+              onClick: function () {
+                app.dialog.alert("点击突发事件按钮");
+              }
+            }
+          ],
+          // Second Group
+          [
+            {
+              text: '取消'
+            }
+          ]
+        ];
+        self.actions = self.$app.actions.create({buttons: buttons});
+      },
+      pageBeforeRemove() {
+        this.actions.destroy();
+      }
+    },
+  }
+</script>

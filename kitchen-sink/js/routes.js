@@ -622,6 +622,43 @@ var routes = [
     path:"/resource/case-detail/",
     componentUrl:'./views/resource/case-detail.html'
   },
+
+  {
+    path:"/report/scout/report/",
+    componentUrl:'./views/report/scout/report.html'
+  },
+  {
+    path:"/report/leader/report/",
+    componentUrl:'./views/report/leader/report.html'
+  },
+
+  {
+    path:"/report/scout/new/",
+    componentUrl:'./views/report/scout/new.html'
+  },
+  {
+    path:"/report/scout/fast_deal/",
+    componentUrl:'./views/report/scout/fast_deal.html'
+  },
+
+  {
+    path:"/report/scout/process_feedback/",
+    componentUrl:'./views/report/scout/process_feedback.html'
+  },
+
+  {
+    path:"/report/scout/myfeedback/",
+    componentUrl:'./views/report/scout/myfeedback.html'
+  },
+  {
+    path:"/report/leader/fast_deal1/",
+    componentUrl:'./views/report/leader/fast_deal1.html'
+  },
+
+  {
+    path:"/report/leader/fast_deal2/",
+    componentUrl:'./views/report/leader/fast_deal2.html'
+  },
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',

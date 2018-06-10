@@ -1,0 +1,227 @@
+<!--suppress ALL -->
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only"></span>
+          </a>
+        </div>
+        <div class="title">事件填报</div>
+        <div class="right">
+          <a class="link icon-only" href="/report/scout/fast_deal/">
+            <i class="icon f7-icons ios-only">check</i>
+            <i class="icon material-icons md-only">check</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="data-table">
+        <table>
+          <tbody>
+          <tr>
+            <td colspan="4" class="value-cell td-img">
+              <button class="button button-outline button-img-add" @click="showAllBtn">
+                <i class="material-icons">add</i>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell">事件标题</td>
+            <td class="value-cell" colspan="3">
+              <textarea class="input-cell-content" name="event_title" type="text"
+                        placeholder="请填写事件标题"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell">事件类型</td>
+            <td class="value-cell link-cell"  colspan="3">
+              <input type="text" placeholder="选择事发地点" readonly="readonly" id="eventType"/>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell" rowspan="2">事发地点</td>
+            <td class="value-cell link-cell" colspan="3">
+              <input type="text" placeholder="选择事发地点" readonly="readonly" id="address"/>
+            </td>
+          </tr>
+          <tr>
+            <td class="value-cell" colspan="3">
+
+              <input class="input-cell-content" name="address" type="text"
+                     placeholder="请填写详细地址"/></td>
+          </tr>
+          <tr>
+            <td class="label-cell">事件等级</td>
+            <td class="value-cell link-cell"  colspan="3">
+              <input type="text" placeholder="选择事件等级" readonly="readonly" id="eventStatus"/>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-cell">事件概况</td>
+            <td colspan="3" class="value-cell textarea-cell">
+              <textarea class="textarea-cell-text">这里填写事件概况这里填这里填写事件概况这里填这里填写事件概况这里填这里填写事件概况这里填写事件概况这里填写事件概况这里填写事件概况这里填写事件概况</textarea>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
+<style>
+  .value-cell{
+    width: 75%!important;
+  }
+</style>
+<script>
+  return {
+    methods: {
+      /*openEventType: function () {
+        this.$app.popup.open(".event-popup");
+      },
+      selectEvent: function () {
+        var val = this.$("[name='event-radio']:checked").val();
+        $("#eventType").text(val);
+        this.$app.popup.close(".event-popup");
+      },*/
+      showAllBtn: function () {
+        this.actions.open();
+      }
+    },
+    on: {
+      pageInit: function (e, page) {
+        var self = this;
+        var app = this.$app;
+        var carVendors = {
+          "东城区": ['东城区1', '东城区3', '东城区2', '东城区4', '东城区5'],
+          "西城区": ['西城区1', '西城区2', '西城区3', '西城区4', '西城区5'],
+          "海淀区": ['东升乡', '学院路街道', '西三旗街道', '双清路街道']
+        };
+        self.pickerAddress = app.picker.create({
+          inputEl: "#address",
+          rotateEffect: false,
+          formatValue: function (values) {
+            return values[0] + " " + values[1];
+          },
+          renderToolbar: function () {
+            return '<div class="toolbar">' +
+              '<div class="toolbar-inner">' +
+              '<div class="left">' +
+              '<a href="#" class="link sheet-close popover-close"><i class="material-icons">cancel</i> </a>' +
+              '</div>' +
+              '<div class="title">选择事发地点</div> ' +
+              '<div class="right">' +
+              '<a href="#" class="link sheet-close popover-close"><i class="material-icons">check</i> </a>' +
+              '</div>' +
+              '</div>' +
+              '</div>';
+          },
+          cols: [
+            {
+              textAlign: 'left',
+              values: ('东城区,西城区,海淀区,朝阳,丰台,门头沟,石景山,房山,通州,顺义,昌平,大兴,怀柔,平谷,延庆,密云').split(','),
+              width: 140,
+              onChange: function (picker, country) {
+                if (picker.cols[1].replaceValues) {
+                  picker.cols[1].replaceValues(carVendors[country]);
+                }
+              }
+            },
+            {
+              values: carVendors["东城区"],
+              width: 140,
+            }
+          ]
+        });
+        var eventVendors = {
+          "城管事件": ['东城区1', '东城区3', '东城区2', '东城区4', '东城区5'],
+          "城管事件1": ['西城区1', '西城区2', '西城区3', '西城区4', '西城区5'],
+          "城管事件2": ['东升乡', '学院路街道', '西三旗街道', '双清路街道']
+        };
+        self.pickerEvent = app.picker.create({
+          inputEl: "#eventType",
+          rotateEffect: false,
+          formatValue: function (values) {
+            return values[0] + " " + values[1];
+          },
+          renderToolbar: function () {
+            return '<div class="toolbar">' +
+              '<div class="toolbar-inner">' +
+              '<div class="left">' +
+              '<a href="#" class="link sheet-close popover-close"><i class="material-icons">cancel</i> </a>' +
+              '</div>' +
+              '<div class="title">选择事件类型</div> ' +
+              '<div class="right">' +
+              '<a href="#" class="link sheet-close popover-close"><i class="material-icons">check</i> </a>' +
+              '</div>' +
+              '</div>' +
+              '</div>';
+          },
+          cols: [
+            {
+              textAlign: 'left',
+              values: ('城管事件,城管事件1,城管事件2').split(','),
+              width: 140,
+              onChange: function (picker, country) {
+                if (picker.cols[1].replaceValues) {
+                  picker.cols[1].replaceValues(eventVendors[country]);
+                }
+              }
+            },
+            {
+              values: eventVendors["城管事件"],
+              width: 140,
+            }
+          ]
+        });
+
+        var buttons = [
+          // First Group
+          [
+            {
+              text: '选取文件',
+              bold: true,
+              //icon: '<i class="material-icons">description</i>',
+              onClick: function () {
+                app.dialog.alert("取消了");
+              }
+            }
+          ],
+          [
+            {
+              text: '拍照',
+              bold: true,
+              //icon: '<i class="material-icons">description</i>',
+              onClick: function () {
+                app.dialog.alert("取消了");
+              }
+            }
+          ],
+          [
+            {
+              text: '从相册中选取',
+              onClick: function () {
+                app.dialog.alert("点击突发事件按钮");
+              }
+            }
+          ],
+          // Second Group
+          [
+            {
+              text: '取消'
+            }
+          ]
+        ];
+        self.actions = self.$app.actions.create({buttons: buttons});
+      },
+      pageBeforeRemove() {
+        this.pickerAddress.destroy();
+        this.actions.destroy();
+      }
+    }
+  }
+</script>
