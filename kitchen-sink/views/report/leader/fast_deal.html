@@ -26,7 +26,7 @@
         </button>
       </div>
     </div>
-    <div class="page-content">
+    <div class="page-content leader-table">
       <div class="data-table">
         <table>
           <tbody>
@@ -35,15 +35,12 @@
               <div class="row">
                 <div class="col col-center">
                   <img class="button-img-add" @click="openPopup" src="./img/beach.jpg"/>
-                  <span class="text-sm">beach.jpg</span>
                 </div>
                 <div class="col col-center">
                   <img class="button-img-add" @click="openPopup" src="./img/monkey.jpg"/>
-                  <span class="text-sm">monkey.jpg</span>
                 </div>
                 <div class="col col-center">
                   <img class="button-img-add" @click="openPopup" src="./img/mountains.jpg"/>
-                  <span class="text-sm">mountains.jpg</span>
                 </div>
               </div>
             </td>
@@ -51,7 +48,12 @@
           <tr>
             <td class="label-cell">事件等级</td>
             <td class="value-cell" colspan="3">
-              紧急、特急、日常
+              特急
+              <div class="event-level">
+                <i class="icon material-icons">brightness_1</i>
+                <i class="icon material-icons">brightness_1</i>
+                <i class="icon material-icons level-danger">brightness_1</i>
+              </div>
             </td>
           </tr>
           <tr>
@@ -85,6 +87,18 @@
           </tbody>
         </table>
       </div>
+      <div class="card" style="border-color:#000;background-color: #eee;display: none" id="card-leader">
+        <div class="card-header text-color-blue">
+          <span>领导姓名</span>
+          <li class="icon material-icons md-only" style="cursor: pointer" @click="closeApproval">cancel</li>
+        </div>
+        <div class="card-content card-content-padding">
+          <p>Quisque eget vestibulum nulla. Quisque quis dui Phasellus quis nibh hendrerit...Quisque eget vestibulum
+            nulla. Quisque quis dui Phasellus quis nibh hendrerit...Quisque eget vestibulum nulla. Quisque quis dui
+            Phasellus quis nibh hendrerit...</p>
+          <p class="date text-align-right">2018-12-12 15:30</p>
+        </div>
+      </div>
     </div>
     <div class="sheet-modal instruction-sheet">
       <div class="toolbar">
@@ -92,15 +106,21 @@
           <div class="left"></div>
           <div class="title">批示意见</div>
           <div class="right">
-            <a class="link sheet-close"><li class="icon material-icons md-only">cancel</li></a>
+            <a class="link sheet-close">
+              <li class="icon material-icons md-only">cancel</li>
+            </a>
           </div>
         </div>
       </div>
       <div class="sheet-modal-inner">
         <div class="page-content">
           <div class="block">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ducimus dolorum ipsa aliquid accusamus perferendis laboriosam delectus numquam minima animi, libero illo in tempora harum sequi corporis alias ex adipisci.</p>
-            <a href="/report/leader/fast_deal2/"><button class="button button-outline bg-color-blue sheet-close color-white">确定</button></a>
+                      <textarea style="min-height: 10em;width: 100%;vertical-align:top" placeholder="请在这里填写批示内容">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ducimus dolorum ipsa aliquid accusamus
+              perferendis laboriosam delectus numquam minima animi, libero illo in tempora harum sequi corporis alias ex
+              adipisci.
+                      </textarea>
+            <button class="button button-outline bg-color-blue sheet-close color-white" @click="saveApproval">确定
+            </button>
           </div>
         </div>
       </div>
@@ -108,14 +128,62 @@
   </div>
 </template>
 <style>
-  .value-cell{
-    width: 75%!important;
+  .value-cell {
+    width: 75% !important;
   }
+
+  .leader-table .button-img-add {
+    width: 100px;
+  }
+
+  .leader-table .text-color-blue {
+    background-color: white;
+  }
+
+
+  .leader-table .card {
+    margin-bottom: 72px !important;
+  }
+
+  .leader-table .textarea-cell {
+    height: 8em !important;
+  }
+
+  .leader-table .textarea-cell-text {
+    min-height: 8em !important;
+  }
+
+  .event-level {
+    display: inline;
+    float: right;
+    color: #cccccc;
+  }
+
+  .event-level .level-normal {
+    color: #66cc33;
+  }
+
+  .event-level .level-emergency {
+    color: #ff6600;
+  }
+
+  .event-level .level-danger {
+    color: #ff3366;
+  }
+
 </style>
 
 <script>
 
   return {
+    methods: {
+      saveApproval: function () {
+        $("#card-leader").show();
+      },
+      closeApproval:function () {
+        $("#card-leader").hide();
+      }
+    },
     on: {
       pageBeforeOut: function () {
         var self = this;

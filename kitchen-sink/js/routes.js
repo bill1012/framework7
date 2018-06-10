@@ -3,6 +3,7 @@ var routes = [
   {
     path: '/',
     url: './index.html',
+    //url:'./views/report/scout/report.html',
     name: 'home',
   },
   // About page
@@ -651,8 +652,8 @@ var routes = [
     componentUrl:'./views/report/scout/myfeedback.html'
   },
   {
-    path:"/report/leader/fast_deal1/",
-    componentUrl:'./views/report/leader/fast_deal1.html'
+    path:"/report/leader/fast_deal/",
+    componentUrl:'./views/report/leader/fast_deal.html'
   },
 
   {

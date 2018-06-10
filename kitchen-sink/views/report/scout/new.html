@@ -11,7 +11,7 @@
         </div>
         <div class="title">事件填报</div>
         <div class="right">
-          <a class="link icon-only" href="/report/scout/fast_deal/">
+          <a class="link icon-only" @click="saveNewReport">
             <i class="icon f7-icons ios-only">check</i>
             <i class="icon material-icons md-only">check</i>
           </a>
@@ -24,6 +24,9 @@
           <tbody>
           <tr>
             <td colspan="4" class="value-cell td-img">
+              <div class="col col-left" style="float: left;margin-right:20px;">
+                <img class="button-img-add" src="./img/beach.jpg"/>
+              </div>
               <button class="button button-outline button-img-add" @click="showAllBtn">
                 <i class="material-icons">add</i>
               </button>
@@ -38,7 +41,7 @@
           </tr>
           <tr>
             <td class="label-cell">事件类型</td>
-            <td class="value-cell link-cell"  colspan="3">
+            <td class="value-cell link-cell" colspan="3">
               <input type="text" placeholder="选择事发地点" readonly="readonly" id="eventType"/>
             </td>
           </tr>
@@ -56,8 +59,21 @@
           </tr>
           <tr>
             <td class="label-cell">事件等级</td>
-            <td class="value-cell link-cell"  colspan="3">
-              <input type="text" placeholder="选择事件等级" readonly="readonly" id="eventStatus"/>
+            <td class="value-cell" colspan="3">
+              <a class="item-link smart-select smart-select-init" data-open-in="popover">
+                <select name="superhero">
+                  <option value="日常" selected>日常
+                  </option>
+                  <option value="紧急">紧急</option>
+                  <option value="特急">特急</option>
+                </select>
+                <div class="item-content item-event-type">
+                  <div class="item-inner">
+                    <div class="item-title"></div>
+                  </div>
+                </div>
+              </a>
+              <!-- <input type="text" placeholder="选择事件等级" readonly="readonly" id="eventStatus"/>-->
             </td>
           </tr>
           <tr>
@@ -73,8 +89,17 @@
   </div>
 </template>
 <style>
-  .value-cell{
-    width: 75%!important;
+  .value-cell {
+    width: 75% !important;
+  }
+
+  .button-img-add {
+    width: 70px;
+    height: 70px !important;
+  }
+
+  .item-event-type .item-after {
+    color: #212121 !important;
   }
 </style>
 <script>
@@ -90,6 +115,12 @@
       },*/
       showAllBtn: function () {
         this.actions.open();
+      },
+      saveNewReport: function () {
+        var self = this;
+        this.$app.dialog.confirm('是否保存？', function () {
+          self.$router.navigate("/report/scout/report/")
+        })
       }
     },
     on: {
@@ -179,48 +210,10 @@
           ]
         });
 
-        var buttons = [
-          // First Group
-          [
-            {
-              text: '选取文件',
-              bold: true,
-              //icon: '<i class="material-icons">description</i>',
-              onClick: function () {
-                app.dialog.alert("取消了");
-              }
-            }
-          ],
-          [
-            {
-              text: '拍照',
-              bold: true,
-              //icon: '<i class="material-icons">description</i>',
-              onClick: function () {
-                app.dialog.alert("取消了");
-              }
-            }
-          ],
-          [
-            {
-              text: '从相册中选取',
-              onClick: function () {
-                app.dialog.alert("点击突发事件按钮");
-              }
-            }
-          ],
-          // Second Group
-          [
-            {
-              text: '取消'
-            }
-          ]
-        ];
-        self.actions = self.$app.actions.create({buttons: buttons});
       },
       pageBeforeRemove() {
         this.pickerAddress.destroy();
-        this.actions.destroy();
+        this.pickerEvent.destroy();
       }
     }
   }

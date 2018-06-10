@@ -12,26 +12,45 @@
         <div class="title">我的反馈</div>
       </div>
     </div>
-    <div class="page-content">
-      <div class="card demo-card-header-pic">
-      <div style="background-image:url(http://lorempixel.com/1000/600/nature/3/)" valign="bottom" class="card-header">亂停車</div>
+    <div class="page-content feed-div">
+      <div class="card">
+        <div  valign="bottom" class="card-header">
+          <div class="row">
+            <div class="col col-center">
+              <img class="button-img-add" @click="openPopup" src="./img/beach.jpg"/>
+            </div>
+            <div class="col col-center">
+              <img class="button-img-add" @click="openPopup" src="./img/monkey.jpg"/>
+            </div>
+            <div class="col col-center">
+              <img class="button-img-add" @click="openPopup" src="./img/mountains.jpg"/>
+            </div>
+          </div>
+        </div>
         <div class="card-content card-content-padding">
           <p class="date">上傳于2018-12-15 14:30:00</p>
-          <p><strong>【進展情況】</strong> 事情進展情況如下：Quisque quis dui quis ex ultricies efficitur vitae non felis.  Phasellus quis nibh hendrerit...</p>
+          <p><strong>【进展情况】</strong> 事情进展情况如下：Quisque quis dui quis ex ultricies efficitur vitae non felis. Phasellus
+            quis nibh hendrerit...</p>
         </div>
       </div>
       <div class="card demo-card-header-pic">
-        <div style="background-image:url(http://lorempixel.com/1000/600/people/6/)" valign="bottom" class="card-header">拉橫幅</div>
+        <div style="background-image:url(http://lorempixel.com/1000/600/people/6/)" valign="bottom" class="card-header">
+          拉橫幅
+        </div>
         <div class="card-content card-content-padding">
           <p class="date">上傳于2018-11-15 14:30:00</p>
-          <p><strong>【進展情況】</strong> Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis. Phasellus quis nibh hendrerit...</p>
+          <p><strong>【进展情况】</strong> Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae
+            non felis. Phasellus quis nibh hendrerit...</p>
         </div>
       </div>
       <div class="card demo-card-header-pic">
-        <div style="background-image:url(http://lorempixel.com/1000/600/nature/3/)" valign="bottom" class="card-header">亂塗鴉</div>
+        <div style="background-image:url(http://lorempixel.com/1000/600/nature/3/)" valign="bottom" class="card-header">
+          亂塗鴉
+        </div>
         <div class="card-content card-content-padding">
           <p class="date">上傳于2018-10-15 14:30:00</p>
-          <p><strong>【進展情況】</strong> Quisque quis dui quis ex ultricies efficitur vitae non felis.  Quisque quis dui quis ex Phasellus quis nibh hendrerit...</p>
+          <p><strong>【进展情况】</strong> Quisque quis dui quis ex ultricies efficitur vitae non felis. Quisque quis dui quis
+            ex Phasellus quis nibh hendrerit...</p>
         </div>
       </div>
     </div>
@@ -39,15 +58,19 @@
   </div>
 </template>
 
+<style>
+  .feed-div .row .col{
+    padding-right:15px;
+  }
+</style>
+
 <script>
   return {
     methods: {
       showAllBtn: function () {
         this.actions.open();
-      }
-    },
+      },
 
-    methods: {
       transferTodo: function () {
         this.$router.navigate("/report/scout/myfeedback/")
       }

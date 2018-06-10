@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="page-content">
-      <div class="data-table">
+      <div class="data-table fast-table">
         <table>
           <tbody>
           <tr>
@@ -35,15 +35,12 @@
               <div class="row">
                 <div class="col col-center">
                   <img class="button-img-add" @click="openPopup" src="./img/beach.jpg"/>
-                  <span class="text-sm">beach.jpg</span>
                 </div>
                 <div class="col col-center">
                   <img class="button-img-add" @click="openPopup" src="./img/monkey.jpg"/>
-                  <span class="text-sm">monkey.jpg</span>
                 </div>
                 <div class="col col-center">
                   <img class="button-img-add" @click="openPopup" src="./img/mountains.jpg"/>
-                  <span class="text-sm">mountains.jpg</span>
                 </div>
               </div>
             </td>
@@ -74,11 +71,16 @@
           <tr>
             <td class="label-cell">事件等级</td>
             <td class="value-cell" colspan="3">
-              紧急、特急、日常
+              紧急
+              <div class="event-level">
+                <i class="icon material-icons">brightness_1</i>
+                <i class="icon material-icons level-emergency">brightness_1</i>
+                <i class="icon material-icons">brightness_1</i>
+              </div>
             </td>
           </tr>
           <tr>
-            <td colspan="4" class="value-cell textarea-cell">
+            <td colspan="4" class="value-cell textarea-cell" style="vertical-align: top">
               这里填写事件概况这里填这里填写事件概况这里填这里填写事件概况这里填这里填写事件概况这里填写事件概况这里填写事件概况这里填写事件概况这里填写事件概况
             </td>
           </tr>
@@ -93,47 +95,31 @@
   .value-cell{
     width: 75%!important;
   }
+
+  .fast-table .button-img-add{
+    width: 100px;
+  }
+  .event-level{
+    display: inline;
+    float: right;
+    color: #cccccc;
+  }
+  .event-level .level-normal{
+    color:#66cc33;
+  }
+
+  .event-level .level-emergency{
+    color:#ff6600;
+  }
+
+  .event-level .level-danger{
+    color:#ff3366;
+  }
+
 </style>
 
 <script>
   return {
-    data: function () {
-      return {
-        photos: [
-          {
-            url: 'img/beach.jpg',
-            caption: 'Amazing beach in Goa, India'
-          },
-          {
-            url: 'img/monkey.jpg',
-            caption: 'I met this monkey in Chinese mountains'
-          },
-          {
-            url: 'img/mountains.jpg',
-            caption: 'Beautiful mountains in Zhangjiajie, China'
-          }
-        ],
-      }
-    },
-    methods: {
-      openPopup: function () {
-        const self = this;
-        self.popup.open();
-      }
-    },
-    on: {
-      pageInit: function () {
-        const self = this;
-        self.popup = self.$app.photoBrowser.create({
-          photos: self.photos,
-          type: 'popup',
-        });
-      },
-      pageBeforeRemove: function () {
-        const self = this;
-        self.popup.destroy();
-      }
-    },
     methods: {
       transferTodo: function () {
         this.$router.navigate("/report/scout/process_feedback/")
