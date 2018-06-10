@@ -655,11 +655,6 @@ var routes = [
     path:"/report/leader/fast_deal/",
     componentUrl:'./views/report/leader/fast_deal.html'
   },
-
-  {
-    path:"/report/leader/fast_deal2/",
-    componentUrl:'./views/report/leader/fast_deal2.html'
-  },
   // Default route (404 page). MUST BE THE LAST
   {
     path: '(.*)',
